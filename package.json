@@ -1,0 +1,49 @@
+{
+  "name": "aether",
+  "version": "1.0.0",
+  "description": "Aether - Human-Centered AI Solutions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh06565/Aether.git"
+  },
+  "keywords": [
+    "react",
+    "ai",
+    "machine-learning",
+    "webgl",
+    "marketing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sh06565/Aether/issues"
+  },
+  "homepage": "https://github.com/sh06565/Aether#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^11.0.0",
+    "three": "^0.162.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.99.0",
+    "lucide-react": "^0.344.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^4.5.14",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "@types/three": "^0.162.0"
+  }
+}
