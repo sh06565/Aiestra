@@ -69,7 +69,7 @@ const ClientLogos = () => {
             <span className="gradient-text">Leaders</span>
           </h2>
           <p className="text-body text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Join hundreds of companies that trust Aether to power their AI initiatives 
+            Join hundreds of companies that trust Aiestra to power their AI initiatives 
             with enterprise-grade security and reliability.
           </p>
         </motion.div>

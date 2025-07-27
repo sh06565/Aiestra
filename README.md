@@ -1,6 +1,6 @@
-# Aether - Human-Centered AI Solutions
+# Aiestra - Human-Centered AI Solutions
 
-A modern, responsive marketing website for Aether, an AI-services company that helps businesses deploy human-centric machine-learning solutions. The site communicates expertise, trustworthiness, and cutting-edge innovation while remaining accessible to non-technical decision makers.
+A modern, responsive marketing website for Aiestra, an AI-services company that helps businesses deploy human-centric machine-learning solutions. The site communicates expertise, trustworthiness, and cutting-edge innovation while remaining accessible to non-technical decision makers.
 
 ## 🎨 Design Features
 
@@ -59,8 +59,8 @@ A modern, responsive marketing website for Aether, an AI-services company that h
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/aether.git
-cd aether
+git clone https://github.com/your-username/aiestra.git
+cd aiestra
 ```
 
 2. Install dependencies:
@@ -157,7 +157,7 @@ colors: {
 - Customize FAQ content
 
 ### Branding
-- Replace "Aether" with your company name
+- Replace "Aiestra" with your company name
 - Update logo and favicon
 - Modify contact information
 - Customize social media links
@@ -199,9 +199,9 @@ This project is licensed under the ISC License.
 ## 📞 Support
 
 For questions or support, contact:
-- Email: hello@aether.ai
+- Email: hello@aiestra.ai
 - Phone: +1 (555) 123-4567
 
 ---
 
-Built with ❤️ by the Aether team
+Built with ❤️ by the Aiestra team

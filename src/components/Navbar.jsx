@@ -42,7 +42,7 @@ const Navbar = ({ onBookDemo }) => {
             <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span className="text-xl font-sora font-bold gradient-text">Aether</span>
+            <span className="text-xl font-sora font-bold gradient-text">Aiestra</span>
           </motion.div>
 
           {/* Desktop Navigation */}

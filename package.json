@@ -1,7 +1,7 @@
 {
-  "name": "aether",
+  "name": "aiestra",
   "version": "1.0.0",
-  "description": "Aether - Human-Centered AI Solutions",
+  "description": "Aiestra - Human-Centered AI Solutions",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sh06565/Aether.git"
+    "url": "git+https://github.com/sh06565/Aiestra.git"
   },
   "keywords": [
     "react",
@@ -24,9 +24,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sh06565/Aether/issues"
+    "url": "https://github.com/sh06565/Aiestra/issues"
   },
-  "homepage": "https://github.com/sh06565/Aether#readme",
+      "homepage": "https://github.com/sh06565/Aiestra#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

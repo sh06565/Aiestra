@@ -139,7 +139,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
               {/* Contact Info */}
               <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-                <p>Questions? Contact us at <span className="text-primary-500">hello@aether.ai</span></p>
+                <p>Questions? Contact us at <span className="text-primary-500">hello@aiestra.ai</span></p>
                 <p>or call <span className="text-primary-500">+1 (555) 123-4567</span></p>
               </div>
             </div>

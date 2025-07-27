@@ -44,7 +44,7 @@ function App() {
           className="text-center"
         >
           <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-xl font-sora font-semibold gradient-text">Aether</h2>
+          <h2 className="text-xl font-sora font-semibold gradient-text">Aiestra</h2>
           <p className="text-sm text-gray-500 mt-2">Loading human-centered AI...</p>
         </motion.div>
       </div>

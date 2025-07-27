@@ -54,7 +54,7 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">A</span>
                 </div>
-                <span className="text-xl font-sora font-bold gradient-text">Aether</span>
+                <span className="text-xl font-sora font-bold gradient-text">Aiestra</span>
               </div>
               
               <p className="text-gray-400 mb-6 max-w-md">
@@ -66,7 +66,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Mail size={16} />
-                  <span className="text-sm">hello@aether.ai</span>
+                  <span className="text-sm">hello@aiestra.ai</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Phone size={16} />
@@ -156,7 +156,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © {currentYear} Aether AI. All rights reserved.
+              © {currentYear} Aiestra AI. All rights reserved.
             </div>
 
             {/* Legal Links */}
