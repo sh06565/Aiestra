@@ -11,12 +11,17 @@ import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import BookingModal from './components/BookingModal'
 import ThemeProvider from './context/ThemeContext'
+import { validateAppConfig, logConfigStatus } from './utils/validateConfig'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   useEffect(() => {
+    // Validate configuration on startup
+    validateAppConfig()
+    logConfigStatus()
+
     // Simulate loading time for smooth initial render
     const timer = setTimeout(() => {
       setIsLoading(false)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react'
+import config from '../config/environment'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -66,15 +67,15 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Mail size={16} />
-                  <span className="text-sm">hello@aiestra.ai</span>
+                  <span className="text-sm">{config.contact.email}</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Phone size={16} />
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  <span className="text-sm">{config.contact.phone}</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <MapPin size={16} />
-                  <span className="text-sm">San Francisco, CA</span>
+                  <span className="text-sm">{config.contact.address}</span>
                 </div>
               </div>
             </motion.div>

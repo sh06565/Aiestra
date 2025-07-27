@@ -68,12 +68,21 @@ cd aiestra
 npm install
 ```
 
-3. Start the development server:
+3. Set up environment variables:
+```bash
+# Copy the example environment file
+cp env.example .env
+
+# Edit .env with your actual values
+# See SECURITY.md for detailed configuration instructions
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:3000`
+5. Open your browser and navigate to `http://localhost:3000`
 
 ### Build for Production
 
@@ -135,6 +144,32 @@ src/
 └── index.css           # Global styles and Tailwind
 ```
 
+## 🔐 Security & Configuration
+
+### Environment Variables
+The project uses secure environment variable management. See `SECURITY.md` for detailed instructions.
+
+**Required Configuration:**
+- Google Calendar scheduling URL
+- Contact information
+- API keys (for future features)
+
+**Quick Setup:**
+```bash
+cp env.example .env
+# Edit .env with your values
+```
+
+### Google Calendar Integration
+The booking system uses Google Calendar's scheduling button. To set up:
+
+1. Create a Google Calendar for bookings
+2. Get your scheduling URL from Calendar settings
+3. Add it to your `.env` file:
+```bash
+VITE_GOOGLE_CALENDAR_SCHEDULING_URL=https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID?gv=true
+```
+
 ## 🎨 Customization
 
 ### Colors
@@ -159,7 +194,7 @@ colors: {
 ### Branding
 - Replace "Aiestra" with your company name
 - Update logo and favicon
-- Modify contact information
+- Modify contact information in environment variables
 - Customize social media links
 
 ## 📈 Analytics & Tracking

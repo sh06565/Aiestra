@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
+import config from '../config/environment'
 
 const BookingModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null)
@@ -21,13 +22,24 @@ const BookingModal = ({ isOpen, onClose }) => {
         script.async = true
         script.onload = () => {
           // Initialize calendar after script loads
-          if (window.calendar && window.calendar.schedulingButton) {
+          if (window.calendar && window.calendar.schedulingButton && config.calendar.schedulingUrl) {
             window.calendar.schedulingButton.load({
-              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3gDvsclOf5kKNBb9_idbXzyTgR7BBQmV4poCSrvwu7gRoIcX5WPutn4YO7-5GpCap6P3JZPII5?gv=true',
-              color: '#00FFC8',
-              label: 'Book an appointment',
+              url: config.calendar.schedulingUrl,
+              color: config.calendar.buttonColor,
+              label: config.calendar.buttonLabel,
               target: modalRef.current,
             })
+          } else {
+            console.error('Google Calendar scheduling URL is not configured')
+            // Show fallback message
+            if (modalRef.current) {
+              modalRef.current.innerHTML = `
+                <div class="text-center p-8">
+                  <p class="text-red-500 mb-4">Calendar booking is not configured</p>
+                  <p class="text-gray-600">Please contact us at ${config.contact.email} to schedule a demo.</p>
+                </div>
+              `
+            }
           }
         }
         document.head.appendChild(script)
@@ -139,8 +151,8 @@ const BookingModal = ({ isOpen, onClose }) => {
 
               {/* Contact Info */}
               <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-                <p>Questions? Contact us at <span className="text-primary-500">hello@aiestra.ai</span></p>
-                <p>or call <span className="text-primary-500">+1 (555) 123-4567</span></p>
+                <p>Questions? Contact us at <span className="text-primary-500">{config.contact.email}</span></p>
+                <p>or call <span className="text-primary-500">{config.contact.phone}</span></p>
               </div>
             </div>
           </motion.div>
