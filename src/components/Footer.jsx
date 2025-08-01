@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import config from '../config/environment'
 
 const Footer = () => {
@@ -8,41 +9,27 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: 'Solutions', href: '#solutions' },
-      { name: 'How it Works', href: '#how-it-works' },
-      { name: 'Case Studies', href: '#case-studies' },
-      { name: 'Pricing', href: '#pricing' }
+      { name: 'Solutions', href: '/solutions' },
+      { name: 'Case Studies', href: '/case-studies' }
     ],
     company: [
-      { name: 'About', href: '#about' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Press', href: '#press' }
+      { name: 'About', href: '/about' }
     ],
     support: [
-      { name: 'Documentation', href: '#docs' },
-      { name: 'Help Center', href: '#help' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Status', href: '#status' }
-    ],
-    legal: [
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
-      { name: 'Cookie Policy', href: '#cookies' },
-      { name: 'GDPR', href: '#gdpr' }
+      { name: 'Contact', href: `mailto:${config.contact.email}` }
     ]
   }
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' }
+    { icon: Twitter, href: 'https://twitter.com/aiestra', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/aiestra', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/aiestra', label: 'GitHub' }
   ]
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white">
       <div className="container-custom py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="sm:col-span-2">
             <motion.div
@@ -67,11 +54,21 @@ const Footer = () => {
               <div className="space-y-2 sm:space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Mail size={14} className="sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">{config.contact.email}</span>
+                  <a 
+                    href={`mailto:${config.contact.email}`}
+                    className="text-xs sm:text-sm hover:text-primary-500 transition-colors"
+                  >
+                    {config.contact.email}
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Phone size={14} className="sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">{config.contact.phone}</span>
+                  <a 
+                    href={`tel:${config.contact.phone}`}
+                    className="text-xs sm:text-sm hover:text-primary-500 transition-colors"
+                  >
+                    {config.contact.phone}
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <MapPin size={14} className="sm:w-4 sm:h-4" />
@@ -81,7 +78,7 @@ const Footer = () => {
             </motion.div>
           </div>
 
-          {/* Links */}
+          {/* Product Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,17 +89,18 @@ const Footer = () => {
             <ul className="space-y-1 sm:space-y-2">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
+          {/* Company Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,17 +111,18 @@ const Footer = () => {
             <ul className="space-y-1 sm:space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
+          {/* Support Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -160,25 +159,14 @@ const Footer = () => {
               © {currentYear} Aiestra AI. All rights reserved.
             </div>
 
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
-              {footerLinks.legal.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-
             {/* Social Links */}
             <div className="flex space-x-3 sm:space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors duration-200"
