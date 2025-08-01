@@ -77,8 +77,8 @@ const Navbar = ({ onBookDemo }) => {
                     to={item.href}
                     className={`text-sm font-medium transition-colors duration-200 ${
                       isActive(item.href)
-                        ? 'text-primary-500'
-                        : 'hover:text-primary-500'
+                        ? 'text-blue-600'
+                        : 'hover:text-blue-600'
                     }`}
                   >
                     {item.name}
@@ -94,7 +94,7 @@ const Navbar = ({ onBookDemo }) => {
               onClick={onBookDemo}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
+              className="group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center justify-center space-x-2">
@@ -159,8 +159,8 @@ const Navbar = ({ onBookDemo }) => {
                         onClick={() => setIsOpen(false)}
                         className={`block text-sm font-medium transition-colors duration-200 ${
                           isActive(item.href)
-                            ? 'text-primary-500'
-                            : 'hover:text-primary-500'
+                            ? 'text-blue-600'
+                            : 'hover:text-blue-600'
                         }`}
                       >
                         {item.name}
@@ -175,9 +175,9 @@ const Navbar = ({ onBookDemo }) => {
                   }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative overflow-hidden w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
+                  className="group relative overflow-hidden w-full px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative flex items-center justify-center space-x-2">
                     <span>Book a Demo</span>
                   </div>

@@ -8,30 +8,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary colors
+        // Primary colors - Blue gradient
         primary: {
-          50: '#f0fffd',
-          100: '#ccfffe',
-          200: '#99fffd',
-          300: '#66fffc',
-          400: '#33fffb',
-          500: '#00ffc8',
-          600: '#00e6b4',
-          700: '#00cca0',
-          800: '#00b38c',
-          900: '#009978',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
+        // Secondary colors - Purple gradient
         secondary: {
-          50: '#f0f4ff',
-          100: '#e0e9ff',
-          200: '#c1d3ff',
-          300: '#a2bdff',
-          400: '#83a7ff',
-          500: '#3e4cff',
-          600: '#3845e6',
-          700: '#323ecc',
-          800: '#2c37b3',
-          900: '#263099',
+          50: '#faf5ff',
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#c084fc',
+          500: '#a855f7',
+          600: '#9333ea',
+          700: '#7c3aed',
+          800: '#6b21a8',
+          900: '#581c87',
+        },
+        // Accent colors - Cyan for highlights
+        accent: {
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
         // Background colors
         background: {

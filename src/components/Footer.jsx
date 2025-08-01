@@ -66,7 +66,7 @@ const Footer = () => {
                   <Mail size={14} className="sm:w-4 sm:h-4" />
                   <a 
                     href={`mailto:${config.contact.email}`}
-                    className="text-xs sm:text-sm hover:text-primary-500 transition-colors"
+                    className="text-xs sm:text-sm hover:text-blue-600 transition-colors"
                   >
                     {config.contact.email}
                   </a>
@@ -75,7 +75,7 @@ const Footer = () => {
                   <Phone size={14} className="sm:w-4 sm:h-4" />
                   <a 
                     href={`tel:${config.contact.phone}`}
-                    className="text-xs sm:text-sm hover:text-primary-500 transition-colors"
+                    className="text-xs sm:text-sm hover:text-blue-600 transition-colors"
                   >
                     {config.contact.phone}
                   </a>
@@ -101,7 +101,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
+                    className="text-gray-400 hover:text-blue-600 transition-colors duration-200 text-xs sm:text-sm"
                   >
                     {link.name}
                   </Link>
@@ -123,7 +123,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
+                    className="text-gray-400 hover:text-blue-600 transition-colors duration-200 text-xs sm:text-sm"
                   >
                     {link.name}
                   </Link>
@@ -145,7 +145,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
+                    className="text-gray-400 hover:text-blue-600 transition-colors duration-200 text-xs sm:text-sm"
                   >
                     {link.name}
                   </a>
@@ -179,7 +179,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={14} className="sm:w-4 sm:h-4 text-gray-400 hover:text-white" />

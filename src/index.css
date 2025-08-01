@@ -8,8 +8,9 @@
     --background-dark: #0A0A0A;
     --text-light: #2D3748;
     --text-dark: #E2E8F0;
-    --primary-cyan: #00D4AA;
-    --primary-indigo: #6366F1;
+    --primary-blue: #3B82F6;
+    --secondary-purple: #A855F7;
+    --accent-cyan: #06B6D4;
     --trust-blue: #3B82F6;
     --warm-orange: #F59E0B;
     --calm-green: #10B981;
@@ -43,18 +44,18 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-primary-500 to-secondary-500 rounded-full;
+    @apply bg-gradient-to-b from-blue-600 via-purple-600 to-cyan-500 rounded-full;
     transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply from-primary-600 to-secondary-600;
+    @apply from-blue-700 via-purple-700 to-cyan-600;
     transform: scale(1.1);
   }
 
   /* Selection styling for better UX */
   ::selection {
-    @apply bg-primary-500/20 text-primary-900 dark:text-primary-100;
+    @apply bg-blue-500/20 text-blue-900 dark:text-blue-100;
   }
 
   /* Focus states for accessibility and psychological comfort */
@@ -82,21 +83,21 @@
 
   /* Gradient text with emotional impact */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
   }
 
   /* Trust-building button styles */
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none;
+    @apply px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none;
     position: relative;
     overflow: hidden;
   }
 
   .btn-primary::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-600 opacity-0 transition-opacity duration-300;
   }
 
   .btn-primary:hover::before {
@@ -104,7 +105,7 @@
   }
 
   .btn-secondary {
-    @apply px-8 py-4 border-2 border-primary-500 text-primary-500 font-semibold rounded-2xl hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-105 focus:outline-none shadow-lg hover:shadow-xl;
+    @apply px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 focus:outline-none shadow-lg hover:shadow-xl;
   }
 
   /* Comfortable spacing with psychological rhythm */
@@ -188,7 +189,7 @@
   }
 
   .success-metric {
-    @apply text-center p-6 rounded-2xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 border border-primary-500/20;
+    @apply text-center p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 border border-blue-500/20;
   }
 }
 
