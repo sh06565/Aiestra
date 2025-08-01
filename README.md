@@ -2,6 +2,10 @@
 
 A modern, responsive marketing website for Aiestra, an AI-services company that helps businesses deploy human-centric machine-learning solutions. The site communicates expertise, trustworthiness, and cutting-edge innovation while remaining accessible to non-technical decision makers.
 
+## 🚀 Live Demo
+
+Visit the live site: [https://sh06565.github.io/Aiestra](https://sh06565.github.io/Aiestra)
+
 ## 🎨 Design Features
 
 - **Minimal & Airy Design**: Clean, spacious layout with glassmorphism accents
@@ -91,6 +95,40 @@ npm run build
 ```
 
 The built files will be in the `dist` directory.
+
+## 🚀 Deployment to GitHub Pages
+
+### Method 1: Manual Deployment
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages:**
+   ```bash
+   npm run deploy
+   ```
+
+3. **Configure GitHub Pages:**
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Set source to "Deploy from a branch"
+   - Select "gh-pages" branch
+   - Save the settings
+
+### Method 2: Automatic Deployment (Recommended)
+
+The repository includes a GitHub Actions workflow that automatically deploys the site when you push to the main branch.
+
+1. **Push your changes:**
+   ```bash
+   git add .
+   git commit -m "Update site"
+   git push origin main
+   ```
+
+2. **The site will automatically deploy** to GitHub Pages within a few minutes.
 
 ## 📱 Features
 
