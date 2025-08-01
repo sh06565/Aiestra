@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react'
+import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import config from '../config/environment'
 
@@ -38,11 +38,21 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center space-x-2 mb-4 sm:mb-6">
-                <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">A</span>
+              <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+                <div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <Sparkles size={18} className="text-white" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
                 </div>
-                <span className="text-xl font-sora font-bold gradient-text">Aiestra</span>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold bg-gradient-to-r from-white via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Aiestra
+                  </span>
+                  <span className="text-xs text-gray-400 font-medium -mt-1">
+                    AI Solutions
+                  </span>
+                </div>
               </div>
               
               <p className="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
