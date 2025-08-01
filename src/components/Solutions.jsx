@@ -78,13 +78,13 @@ const Solutions = ({ onBookDemo }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-h2 font-sora font-bold mb-4">
             Autonomous AI{' '}
             <span className="gradient-text">Solutions</span>
           </h2>
-          <p className="text-body text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-body text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             From voice agents to autonomous chatbots, our AI agents work independently 
             to solve complex business challenges with human-like intelligence.
           </p>
@@ -96,7 +96,7 @@ const Solutions = ({ onBookDemo }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {solutions.map((solution, index) => (
             <motion.div
@@ -105,26 +105,26 @@ const Solutions = ({ onBookDemo }) => {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group relative"
             >
-              <div className="glass dark:glass-dark rounded-2xl p-8 h-full transition-all duration-300 hover:shadow-2xl">
+              <div className="glass dark:glass-dark rounded-2xl p-6 sm:p-8 h-full transition-all duration-300 hover:shadow-2xl">
                 {/* Icon */}
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${solution.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <solution.icon size={28} className="text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r ${solution.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <solution.icon size={20} className="sm:w-7 sm:h-7 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-h4 font-sora font-semibold mb-4">
+                <h3 className="text-h4 font-sora font-semibold mb-3 sm:mb-4">
                   {solution.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   {solution.description}
                 </p>
 
                 {/* Features */}
                 <ul className="space-y-2">
                   {solution.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                      <div className="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                      <span>{feature}</span>
+                    <li key={featureIndex} className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                      <div className="w-1.5 h-1.5 bg-primary-500 rounded-full flex-shrink-0"></div>
+                      <span className="leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -142,20 +142,20 @@ const Solutions = ({ onBookDemo }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
-          <div className="glass dark:glass-dark rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="glass dark:glass-dark rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
             <h3 className="text-h3 font-sora font-semibold mb-4">
               Ready to Deploy Autonomous AI Agents?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base">
               Let's discuss how our AI agents can transform your business operations and customer interactions.
             </p>
             <motion.button
               onClick={onBookDemo}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
+              className="btn-primary text-sm sm:text-base"
             >
               Schedule AI Demo
             </motion.button>

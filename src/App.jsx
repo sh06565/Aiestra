@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Solutions from './components/Solutions'
-import HowItWorks from './components/HowItWorks'
-import CaseStudies from './components/CaseStudies'
-import ClientLogos from './components/ClientLogos'
-import FAQ from './components/FAQ'
-import Newsletter from './components/Newsletter'
+import Home from './pages/Home'
+import SolutionsPage from './pages/Solutions'
+import CaseStudiesPage from './pages/CaseStudies'
+import About from './pages/About'
 import Footer from './components/Footer'
 import BookingModal from './components/BookingModal'
 import ThemeProvider from './context/ThemeContext'
@@ -58,22 +56,23 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background-light dark:bg-background-dark">
-        <Navbar onBookDemo={openBookingModal} />
-        
-        <main>
-          <Hero onBookDemo={openBookingModal} />
-          <Solutions onBookDemo={openBookingModal} />
-          <HowItWorks onBookDemo={openBookingModal} />
-          <CaseStudies onBookDemo={openBookingModal} />
-          <ClientLogos />
-          <FAQ onBookDemo={openBookingModal} />
-          <Newsletter />
-        </main>
+      <Router>
+        <div className="min-h-screen bg-background-light dark:bg-background-dark">
+          <Navbar onBookDemo={openBookingModal} />
+          
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Home onBookDemo={openBookingModal} />} />
+              <Route path="/solutions" element={<SolutionsPage onBookDemo={openBookingModal} />} />
+              <Route path="/case-studies" element={<CaseStudiesPage onBookDemo={openBookingModal} />} />
+              <Route path="/about" element={<About onBookDemo={openBookingModal} />} />
+            </Routes>
+          </AnimatePresence>
 
-        <Footer />
-        <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
-      </div>
+          <Footer />
+          <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
+        </div>
+      </Router>
     </ThemeProvider>
   )
 }

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = ({ onBookDemo }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +18,18 @@ const Navbar = ({ onBookDemo }) => {
   }, [])
 
   const navItems = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'How it Works', href: '#how-it-works' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'About', href: '#about' },
+    { name: 'Home', href: '/' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'About', href: '/about' },
   ]
+
+  const isActive = (href) => {
+    if (href === '/') {
+      return location.pathname === '/'
+    }
+    return location.pathname === href
+  }
 
   return (
     <motion.nav
@@ -39,23 +48,33 @@ const Navbar = ({ onBookDemo }) => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">A</span>
-            </div>
-            <span className="text-xl font-sora font-bold gradient-text">Aiestra</span>
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">A</span>
+              </div>
+              <span className="text-xl font-sora font-bold gradient-text">Aiestra</span>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ y: -2 }}
-                className="text-sm font-medium hover:text-primary-500 transition-colors duration-200"
-              >
-                {item.name}
-              </motion.a>
+              <motion.div key={item.name}>
+                <motion.div
+                  whileHover={{ y: -2 }}
+                >
+                  <Link
+                    to={item.href}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      isActive(item.href) 
+                        ? 'text-primary-500' 
+                        : 'hover:text-primary-500'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
 
@@ -118,15 +137,23 @@ const Navbar = ({ onBookDemo }) => {
             >
               <div className="py-4 space-y-4 border-t border-white/10">
                 {navItems.map((item) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    whileHover={{ x: 10 }}
-                    className="block text-sm font-medium hover:text-primary-500 transition-colors duration-200"
-                  >
-                    {item.name}
-                  </motion.a>
+                  <motion.div key={item.name}>
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                    >
+                      <Link
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`block text-sm font-medium transition-colors duration-200 ${
+                          isActive(item.href) 
+                            ? 'text-primary-500' 
+                            : 'hover:text-primary-500'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  </motion.div>
                 ))}
                 <motion.button
                   onClick={() => {
