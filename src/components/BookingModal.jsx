@@ -247,46 +247,6 @@ const BookingModal = ({ isOpen, onClose }) => {
                     ))}
                   </div>
                 </motion.div>
-
-                {/* Enhanced Contact Info */}
-                {/* <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 border border-blue-200/50 dark:border-purple-500/20"
-                >
-                  <div className="text-center">
-                    <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-2 sm:mb-3 lg:mb-4">
-                      <Star size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-500" />
-                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 dark:text-gray-100">Need Help?</h4>
-                      <Star size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-500" />
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-3 lg:space-x-6">
-                      <div className="flex items-center space-x-1 sm:space-x-2">
-                        <Mail size={12} className="sm:w-4 sm:h-4 text-blue-500" />
-                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Email:</span>
-                        <a 
-                          href={`mailto:${config.contact.email}`}
-                          className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors text-xs sm:text-sm"
-                        >
-                          {config.contact.email}
-                        </a>
-                      </div>
-                      
-                      <div className="flex items-center space-x-1 sm:space-x-2">
-                        <Phone size={12} className="sm:w-4 sm:h-4 text-green-500" />
-                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Call:</span>
-                        <a 
-                          href={`tel:${config.contact.phone}`}
-                          className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 transition-colors text-xs sm:text-sm"
-                        >
-                          {config.contact.phone}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div> */}
               </div>
             </div>
           </motion.div>
