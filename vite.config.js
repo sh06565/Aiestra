@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Aiestra/', // GitHub Pages base path
+  base: '/', // Custom domain base path
   server: {
     port: 3000,
     open: true
