@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = ({ onBookDemo }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const navItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Platform', href: '/' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'About', href: '/about' },
+    { name: 'Insights', href: '/insights' },
+    { name: 'Company', href: '/company' },
   ]
 
   const isActive = (href) => {
@@ -32,84 +23,47 @@ const Navbar = ({ onBookDemo }) => {
   }
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'glass dark:glass-dark shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Enhanced Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3"
-          >
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:rotate-3">
-                  <Sparkles size={18} className="text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-white dark:via-blue-400 dark:to-purple-400">
-                  Aiestra
-                </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400 font-medium -mt-1">
-                  AI Solutions
-                </span>
-              </div>
-            </Link>
-          </motion.div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="text-2xl font-normal text-black lowercase tracking-wide">
+            aiestra
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.div key={item.name}>
-                <motion.div
-                  whileHover={{ y: -2 }}
-                >
-                  <Link
-                    to={item.href}
-                    className={`text-sm font-medium transition-colors duration-200 ${
-                      isActive(item.href)
-                        ? 'text-blue-600'
-                        : 'hover:text-blue-600'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              </motion.div>
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isActive(item.href)
+                    ? 'text-black'
+                    : 'text-gray-600 hover:text-black'
+                }`}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center">
-            <motion.button
+          <div className="hidden lg:flex items-center space-x-4">
+  
+            <button
               onClick={onBookDemo}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
+              className="px-6 py-2 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative flex items-center justify-center space-x-2">
-                <span>Book a Demo</span>
-              </div>
-            </motion.button>
+              Request a demo
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <motion.button
+            <button
               onClick={() => setIsOpen(!isOpen)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-lg glass dark:glass-dark"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
@@ -135,7 +89,7 @@ const Navbar = ({ onBookDemo }) => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.button>
+            </button>
           </div>
         </div>
 
@@ -146,48 +100,48 @@ const Navbar = ({ onBookDemo }) => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden"
+              transition={{ duration: 0.3 }}
+              className="lg:hidden border-t border-gray-100"
             >
-              <div className="py-4 space-y-4 border-t border-white/10">
+              <div className="py-4 space-y-4">
                 {navItems.map((item) => (
-                  <motion.div key={item.name}>
-                    <motion.div
-                      whileHover={{ x: 10 }}
-                    >
-                      <Link
-                        to={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`block text-sm font-medium transition-colors duration-200 ${
-                          isActive(item.href)
-                            ? 'text-blue-600'
-                            : 'hover:text-blue-600'
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                  </motion.div>
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block text-sm font-medium transition-colors duration-200 ${
+                      isActive(item.href)
+                        ? 'text-black'
+                        : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
                 ))}
-                <motion.button
-                  onClick={() => {
-                    onBookDemo()
-                    setIsOpen(false)
-                  }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative overflow-hidden w-full px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative flex items-center justify-center space-x-2">
-                    <span>Book a Demo</span>
-                  </div>
-                </motion.button>
+                <div className="pt-4 border-t border-gray-100 space-y-4">
+                  <Link
+                    to="/signin"
+                    onClick={() => setIsOpen(false)}
+                    className="block text-sm font-medium text-gray-600 hover:text-black transition-colors duration-200"
+                  >
+                    Sign in
+                  </Link>
+                  <button
+                    onClick={() => {
+                      onBookDemo()
+                      setIsOpen(false)
+                    }}
+                    className="w-full px-6 py-2 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                  >
+                    Request a demo
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   )
 }
 
