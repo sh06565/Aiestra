@@ -87,16 +87,16 @@ const BookingModal = ({ isOpen, onClose }) => {
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           onClick={handleBackdropClick}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          >
-            <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+                      <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
+            >
+            <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                 <h2 className="text-xl font-medium text-black">
                   Schedule a Demo
                 </h2>
@@ -110,13 +110,13 @@ const BookingModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-6">
+              <div className="p-4 sm:p-6">
+                <p className="text-gray-600 mb-4">
                   Book a personalized demo to see how our AI solutions can transform your business.
                 </p>
 
                 {/* Calendar Integration */}
-                <div ref={modalRef} className="mb-6">
+                <div ref={modalRef} className="mb-4 min-h-[600px]">
                   {/* Cal.com will be loaded here */}
                 </div>
 
