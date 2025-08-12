@@ -29,8 +29,10 @@
   },
   "homepage": "https://sh06565.github.io/Aiestra",
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@react-three/drei": "^9.99.0",
     "@react-three/fiber": "^8.15.0",
+    "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.344.0",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import SolutionsPage from './pages/Solutions'
@@ -75,6 +76,7 @@ function App() {
 
           <Footer />
           <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
+          <SpeedInsights />
         </div>
       </Router>
     </ThemeProvider>

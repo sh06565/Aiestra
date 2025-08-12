@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
+import { getCalApi } from "@calcom/embed-react"
 import config from '../config/environment'
 
 const BookingModal = ({ isOpen, onClose }) => {
@@ -8,44 +9,37 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      // Load Google Calendar scripts when modal opens
-      const loadGoogleCalendar = () => {
-        // Load CSS
-        const link = document.createElement('link')
-        link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css'
-        link.rel = 'stylesheet'
-        document.head.appendChild(link)
-
-        // Load JS
-        const script = document.createElement('script')
-        script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js'
-        script.async = true
-        script.onload = () => {
-          // Initialize calendar after script loads
-          if (window.calendar && window.calendar.schedulingButton && config.calendar.schedulingUrl) {
-            window.calendar.schedulingButton.load({
-              url: config.calendar.schedulingUrl,
-              color: config.calendar.buttonColor,
-              label: config.calendar.buttonLabel,
-              target: modalRef.current,
-            })
-          } else {
-            console.error('Google Calendar scheduling URL is not configured')
-            // Show fallback message
-            if (modalRef.current) {
-              modalRef.current.innerHTML = `
-                <div class="text-center p-4">
-                  <p class="text-red-500 mb-4">Calendar booking is not configured</p>
-                  <p class="text-gray-600">Please contact us at ${config.contact.email} to schedule a demo.</p>
-                </div>
-              `
-            }
+      // Load Cal.com when modal opens
+      const loadCalCom = async () => {
+        try {
+          const cal = await getCalApi();
+          
+          // Initialize Cal.com in the modal
+          if (modalRef.current) {
+            cal("inline", {
+              elementOrSelector: modalRef.current,
+              calLink: "aiestra/30min",
+              config: {
+                layout: "month_view",
+                hideEventTypeDetails: false
+              }
+            });
+          }
+        } catch (error) {
+          console.error('Cal.com integration error:', error);
+          // Show fallback message
+          if (modalRef.current) {
+            modalRef.current.innerHTML = `
+              <div class="text-center p-4">
+                <p class="text-red-500 mb-4">Calendar booking is not configured</p>
+                <p class="text-gray-600">Please contact us at ${config.contact.email} to schedule a demo.</p>
+              </div>
+            `
           }
         }
-        document.head.appendChild(script)
       }
 
-      loadGoogleCalendar()
+      loadCalCom();
     }
   }, [isOpen])
 
@@ -123,7 +117,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
                 {/* Calendar Integration */}
                 <div ref={modalRef} className="mb-6">
-                  {/* Google Calendar will be loaded here */}
+                  {/* Cal.com will be loaded here */}
                 </div>
 
                 {/* Contact Info */}
