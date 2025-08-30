@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, CheckCircle, AlertCircle, Info, AlertTriangle } from 'lucide-react'
-import { useToast } from '../context/AppContext'
+import { useToast } from '../../context'
 
 const Toast = () => {
   const { toast, clearToast } = useToast()

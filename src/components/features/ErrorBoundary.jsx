@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { AlertTriangle, RefreshCw, Home, ArrowLeft } from 'lucide-react'
-import { useApp } from '../context/AppContext'
+import { useApp } from '../../context'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {

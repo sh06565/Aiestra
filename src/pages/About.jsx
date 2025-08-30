@@ -1,6 +1,5 @@
 import React from 'react'
-import FAQ from '../components/FAQ'
-import Newsletter from '../components/Newsletter'
+import { FAQ, Newsletter } from '../components'
 
 const About = ({ onBookDemo }) => {
   return (

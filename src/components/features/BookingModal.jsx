@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { getCalApi } from "@calcom/embed-react"
-import config from '../config/environment'
+import config from '../../config/environment'
 
 const BookingModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null)

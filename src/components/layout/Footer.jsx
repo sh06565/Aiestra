@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import config from '../config/environment'
+import config from '../../config/environment'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()

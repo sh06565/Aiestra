@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useParams, Link } from 'react-router-dom'
-import Solutions from '../components/Solutions'
+import { Solutions } from '../components'
 
 const SolutionsPage = ({ onBookDemo }) => {
   const { solutionId } = useParams()
