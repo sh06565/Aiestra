@@ -24,4 +24,4 @@ export { default as Toast } from './features/Toast';
 export { default as ErrorBoundary } from './features/ErrorBoundary';
 
 // UI Components
-export { Button, Card, Orb } from './ui';
+export { Button, Card, Orb, Logo } from './ui';
