@@ -22,7 +22,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-orange-500 text-white">
+    <footer className="bg-purple-900 border-t border-purple-800">
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer Content */}
@@ -35,21 +35,21 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl font-normal text-white lowercase tracking-wide mb-6">
+                <h3 className="text-2xl font-bold text-white lowercase tracking-wide mb-6">
                   aiestra
                 </h3>
                 
-                <p className="text-white/90 mb-8 max-w-md text-lg leading-relaxed">
+                <p className="text-purple-100 mb-8 max-w-md text-lg leading-relaxed">
                   Human-centered AI solutions that transform businesses. 
                   Deploy machine learning that puts people first.
                 </p>
 
                 {/* Contact Info */}
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-white/80">
+                  <div className="flex items-center space-x-3 text-purple-200">
                     <span className="text-sm">{config.contact.email}</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-white/80">
+                  <div className="flex items-center space-x-3 text-purple-200">
                     <span className="text-sm">{config.contact.phone}</span>
                   </div>
                 </div>
@@ -63,13 +63,13 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="font-medium mb-6 text-white">Product</h4>
+              <h4 className="font-semibold mb-6 text-white">Product</h4>
               <ul className="space-y-3">
                 {footerLinks.product.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-white/80 hover:text-white transition-colors duration-200 text-sm"
+                      className="text-purple-200 hover:text-white transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </Link>
@@ -85,13 +85,13 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="font-medium mb-6 text-white">Company</h4>
+              <h4 className="font-semibold mb-6 text-white">Company</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-white/80 hover:text-white transition-colors duration-200 text-sm"
+                      className="text-purple-200 hover:text-white transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </Link>
@@ -107,22 +107,22 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="border-t border-white/20 pt-8"
+            className="border-t border-purple-800 pt-8"
           >
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-white/60 text-sm">
+              <p className="text-purple-300 text-sm">
                 © {currentYear} Aiestra. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <Link
                   to="/privacy"
-                  className="text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-purple-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   to="/terms"
-                  className="text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-purple-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Terms of Service
                 </Link>

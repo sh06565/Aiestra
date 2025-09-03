@@ -1,53 +1,123 @@
 import React from 'react';
-import SpotlightCard from '../ui/SpotlightCard';
 
 const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      title: "Connect Your Systems",
-      description: "Integrate with your existing CRM, phone system, and business tools through our simple API or pre-built connectors.",
+      title: "Build",
+      description: "Utilize the voice AI API and our intuitive agent builder to create custom voice AI agents effortlessly.",
       visual: (
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-          </svg>
+        <div className="w-full max-w-xs mx-auto">
+          <div className="text-xs text-gray-500 mb-2 text-center">Start</div>
+          <div className="space-y-3">
+            <div className="flex items-center justify-center">
+              <div className="w-16 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xs">Welcome</span>
+              </div>
+              <div className="text-xs text-gray-500 ml-2">prompt</div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="w-20 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xs">Qualification</span>
+              </div>
+              <div className="text-xs text-gray-500 ml-2">prompt</div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="w-24 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xs">Not Qualified</span>
+              </div>
+              <div className="text-xs text-gray-500 ml-2">prompt</div>
+            </div>
+          </div>
+          <div className="text-xs text-gray-500 mt-2 text-center">Once complete...</div>
         </div>
       )
     },
     {
       number: "02",
-      title: "Train Your AI Agent",
-      description: "Upload your knowledge base, customize responses, and set business rules to match your brand voice and processes.",
+      title: "Test",
+      description: "Perform comprehensive agent testing with built-in test LLM features to ensure seamless handling of edge cases.",
       visual: (
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
+        <div className="w-full max-w-xs mx-auto bg-white border border-gray-200 rounded-lg p-3">
+          <div className="flex space-x-2 mb-3">
+            <div className="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded">Test Audio</div>
+            <div className="px-3 py-1 text-xs bg-blue-500 text-white rounded">Test LLM</div>
+            <div className="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded">⚙️</div>
+          </div>
+          <div className="text-xs text-gray-500 mb-3">New Test Case</div>
+          <div className="space-y-2 text-xs">
+            <div className="bg-blue-50 p-2 rounded">
+              <p className="text-gray-800">Hey there, this is Retell reservation line. Do you want to make a reservation?</p>
+            </div>
+            <div className="bg-gray-50 p-2 rounded">
+              <p className="text-gray-800">Yes</p>
+            </div>
+            <div className="bg-blue-50 p-2 rounded">
+              <p className="text-gray-800">Great, could you please tell me the date you'd like to make the reservation for?</p>
+            </div>
+          </div>
         </div>
       )
     },
     {
       number: "03",
-      title: "Deploy & Scale",
-      description: "Go live in minutes with your AI voice agent handling customer calls, support requests, and sales inquiries.",
+      title: "Deploy",
+      description: "Easily deploy your agents to phone calls, web calls, SMS, and more.",
       visual: (
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+        <div className="w-full max-w-xs mx-auto flex justify-center space-x-4">
+          <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+          </div>
+          <div className="w-12 h-12 border-2 border-gray-300 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+          </div>
+          <div className="w-12 h-12 border-2 border-gray-300 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+          </div>
         </div>
       )
     },
     {
       number: "04",
-      title: "Monitor & Optimize",
-      description: "Track performance metrics, analyze customer interactions, and continuously improve your AI agent's effectiveness.",
+      title: "Monitor",
+      description: "Track success rates, latency, and user sentiment through call history dashboard. Quickly identify failed calls.",
       visual: (
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>
+        <div className="w-full max-w-xs mx-auto bg-white border border-gray-200 rounded-lg p-3">
+          <div className="text-xs font-medium text-gray-800 mb-2">Call History</div>
+          <div className="text-xs text-gray-600 mb-3">4/23/2023 15:59:36 PhoneCall - inbound</div>
+          <div className="text-xs text-gray-500 mb-3">0:02 / 0:05</div>
+          <div className="space-y-1">
+            <div className="text-xs">
+              <span className="text-gray-600">Call Successful:</span>
+              <span className="text-green-600 ml-2">Complete</span>
+            </div>
+            <div className="text-xs">
+              <span className="text-gray-600">Call Status:</span>
+              <span className="text-gray-800 ml-2">Ended</span>
+            </div>
+            <div className="text-xs">
+              <span className="text-gray-600">User Sentiment:</span>
+              <span className="text-green-600 ml-2">Positive</span>
+            </div>
+            <div className="text-xs">
+              <span className="text-gray-600">Disconnection Reason:</span>
+              <span className="text-gray-800 ml-2">User hang up</span>
+            </div>
+            <div className="text-xs">
+              <span className="text-gray-600">Average End to End Latency:</span>
+              <span className="text-blue-600 ml-2">800ms</span>
+            </div>
+          </div>
         </div>
       )
     }
@@ -60,71 +130,43 @@ const HowItWorks = () => {
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-6">
-              VALUE
+              Value
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8">
               How It Works
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Get started with aiestra in four simple steps. From integration to optimization, we make AI voice agents accessible and effective for your business.
-            </p>
           </div>
 
           {/* Steps Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <SpotlightCard
+              <div
                 key={index}
-                className="custom-spotlight-card h-full"
-                spotlightColor="rgba(0, 229, 255, 0.2)"
+                className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex flex-col items-center text-center space-y-6">
                   {/* Step Number */}
-                  <div className="text-6xl md:text-7xl font-bold text-gray-300">
+                  <div className="text-6xl md:text-7xl font-bold text-purple-600">
                     {step.number}
                   </div>
                   
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                    <span className="text-purple-600">{step.title}</span>
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
+                  
                   {/* Visual Element */}
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 mt-4">
                     {step.visual}
                   </div>
-                  
-                  {/* Content */}
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
                 </div>
-              </SpotlightCard>
+              </div>
             ))}
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-20 text-center">
-            <div className="inline-flex items-center space-x-8 bg-gradient-to-r from-purple-50 to-blue-50 px-8 py-6 rounded-2xl border border-purple-200">
-              <div className="flex items-center space-x-3">
-                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-lg font-semibold text-gray-800">Quick Setup</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                <span className="text-lg font-semibold text-gray-800">24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-                <span className="text-lg font-semibold text-gray-800">Continuous Learning</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

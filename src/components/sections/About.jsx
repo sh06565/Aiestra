@@ -42,7 +42,7 @@ const About = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+    <section className="relative py-32 overflow-hidden bg-white">
       {/* Background Glass Orbs */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-full blur-3xl"></div>
@@ -53,13 +53,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-purple-300/20 text-purple-200 text-sm font-medium rounded-full mb-6">
+            <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-6">
               FEATURES
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8">
               Smart Features to Drive Growth
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
               Harness the power of AI to transform your customer interactions, streamline operations, and unlock new growth opportunities with intelligent automation.
             </p>
             
