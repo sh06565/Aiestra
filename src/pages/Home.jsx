@@ -1,15 +1,28 @@
 import React from 'react'
-import { Hero, Solutions, CoreBenefits, ClientLogos, FAQ, Newsletter } from '../components'
+import { 
+  Hero, 
+  About, 
+  HowItWorks, 
+  KeyBenefits, 
+  Solutions, 
+  CaseStudies, 
+  Testimonials, 
+  Pricing, 
+  CallToAction 
+} from '../components'
 
 const Home = ({ onBookDemo }) => {
   return (
     <main>
       <Hero onBookDemo={onBookDemo} />
+      <About />
+      <HowItWorks />
+      <KeyBenefits />
       <Solutions onBookDemo={onBookDemo} />
-      <CoreBenefits />
-      <ClientLogos />
-      <FAQ onBookDemo={onBookDemo} />
-      <Newsletter />
+      <CaseStudies />
+      <Testimonials />
+      <Pricing onBookDemo={onBookDemo} />
+      <CallToAction onBookDemo={onBookDemo} />
     </main>
   )
 }
