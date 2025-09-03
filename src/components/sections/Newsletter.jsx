@@ -1,201 +1,106 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Mail, ArrowRight, CheckCircle, Star } from 'lucide-react'
+import React, { useState } from 'react';
 
 const Newsletter = () => {
-  const [email, setEmail] = useState('')
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Simulate subscription
-    setIsSubscribed(true)
-    setTimeout(() => setIsSubscribed(false), 3000)
-    setEmail('')
-  }
-
-  const testimonials = [
-    {
-      text: '"The AI insights have transformed our decision-making process."',
-      author: 'Sarah M.',
-      role: 'CTO, TechCorp',
-      rating: 5
-    },
-    {
-      text: '"Incredible accuracy and easy integration with our existing systems."',
-      author: 'Michael R.',
-      role: 'VP Engineering, DataFlow',
-      rating: 5
-    },
-    {
-      text: '"The ROI we\'ve seen in just 3 months is remarkable."',
-      author: 'Jennifer L.',
-      role: 'Head of Analytics, CloudSync',
-      rating: 5
-    }
-  ]
+    e.preventDefault();
+    console.log('Newsletter subscription:', email);
+    setEmail('');
+  };
 
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      {/* Background Glass Orbs */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            Stay{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Updated
+            </span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
+            Get the latest insights on AI voice technology, industry trends, and tips to optimize your customer interactions.
+          </p>
+
           {/* Newsletter Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-h2 font-sora font-bold mb-4">
-              Stay Ahead with{' '}
-              <span className="gradient-text">AI Insights</span>
-            </h2>
-            <p className="text-body text-gray-600 dark:text-gray-300 mb-8">
-              Get the latest AI trends, case studies, and exclusive insights delivered to your inbox. 
-              Join 10,000+ professionals staying ahead of the curve.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail size={20} className="text-gray-400" />
-                </div>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="w-full pl-12 pr-4 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                  required
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full btn-primary flex items-center justify-center space-x-2"
-              >
-                <span>Subscribe to Newsletter</span>
-                <ArrowRight size={18} />
-              </motion.button>
-
-              {isSubscribed && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center space-x-2 text-green-600 dark:text-green-400"
-                >
-                  <CheckCircle size={16} />
-                  <span className="text-sm">Successfully subscribed!</span>
-                </motion.div>
-              )}
-
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                No spam, unsubscribe at any time. We respect your privacy.
-              </p>
-            </form>
-
-            {/* Benefits */}
-            <div className="mt-8 space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                <span className="text-sm text-gray-600 dark:text-gray-300">Weekly AI insights and trends</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                <span className="text-sm text-gray-600 dark:text-gray-300">Exclusive case studies and success stories</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
-                <span className="text-sm text-gray-600 dark:text-gray-300">Early access to new features and updates</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Social Proof */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div className="text-center lg:text-left">
-              <h3 className="text-h3 font-sora font-semibold mb-4">
-                Trusted by Industry Leaders
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                See what our customers are saying about their AI transformation journey.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass dark:glass-dark rounded-2xl p-6"
-                >
-                  {/* Rating */}
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <blockquote className="text-gray-600 dark:text-gray-300 mb-4 italic">
-                    "{testimonial.text}"
-                  </blockquote>
-
-                  {/* Author */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
-                        {testimonial.author.charAt(0)}
-                      </span>
+          <div className="group mb-16">
+            <div className="relative max-w-2xl mx-auto">
+              <div className="relative p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex-1">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email address"
+                        className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50 focus:bg-white/20 transition-all duration-300"
+                        required
+                      />
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900 dark:text-white">
-                        {testimonial.author}
-                      </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
-                        {testimonial.role}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="glass dark:glass-dark rounded-2xl p-6"
-            >
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold gradient-text">10K+</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Subscribers</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold gradient-text">4.9/5</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Average Rating</div>
+                    <button
+                      type="submit"
+                      className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                  <p className="text-white/60 text-sm mt-4">
+                    No spam, unsubscribe at any time. We respect your privacy.
+                  </p>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
+
+          {/* Additional Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "📚",
+                title: "Expert Insights",
+                description: "Access to industry experts and thought leaders sharing their knowledge on AI and customer experience."
+              },
+              {
+                icon: "🚀",
+                title: "Latest Updates",
+                description: "Be the first to know about new features, integrations, and platform improvements."
+              },
+              {
+                icon: "💡",
+                title: "Best Practices",
+                description: "Learn proven strategies and tips to maximize the value of your AI voice agents."
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group">
+                <div className="relative p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20 text-center">
+                  {/* Glass effect glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Newsletter 
+export default Newsletter; 

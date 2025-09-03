@@ -1,163 +1,111 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import React, { useState } from 'react';
 
-const FAQ = ({ onBookDemo }) => {
-  const [openIndex, setOpenIndex] = useState(null)
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
+  const faqItems = [
     {
-      question: 'How autonomous are your AI agents?',
-      answer: 'Our AI agents operate with 99% autonomy, making independent decisions and executing complex tasks without human intervention. They can reason, plan, and adapt to new situations while maintaining safety protocols.'
+      question: "What is aiestra?",
+      answer: "aiestra is an AI-powered voice agent platform that helps businesses automate customer interactions, reduce call volume, and provide 24/7 support through intelligent voice conversations."
     },
     {
-      question: 'What types of AI agents do you offer?',
-      answer: 'We specialize in three main types: Voice Agents for natural conversations, Agentic AI for autonomous reasoning and decision-making, and Autonomous Chatbots that learn and improve continuously through interactions.'
+      question: "Does aiestra offer a free trial?",
+      answer: "Yes, we offer a comprehensive free trial that allows you to test our AI voice agents with your own workflows and integrations before making a commitment."
     },
     {
-      question: 'How do your voice agents handle natural language?',
-      answer: 'Our voice agents use advanced natural language processing to understand context, intent, and emotion. They can handle multi-turn conversations, recognize accents, and respond with human-like speech patterns.'
+      question: "We already have a support team. Why use aiestra?",
+      answer: "aiestra complements your existing team by handling routine inquiries, after-hours support, and high-volume calls, allowing your human agents to focus on complex issues and high-value interactions."
     },
     {
-      question: 'Can AI agents learn and improve over time?',
-      answer: 'Yes, all our AI agents are designed for continuous learning. They analyze interactions, identify patterns, and automatically improve their responses and decision-making capabilities without manual intervention.'
+      question: "Is aiestra secure and compliant?",
+      answer: "Absolutely. We maintain enterprise-level security with SOC2, HIPAA, GDPR, and PCI DSS compliance. All data is encrypted, stored in-house, and never shared with third parties."
     },
     {
-      question: 'How secure are autonomous AI agents?',
-      answer: 'Our AI agents include enterprise-grade security with end-to-end encryption, privacy compliance (GDPR, SOC 2), audit trails, and secure deployment protocols. They operate within defined safety boundaries.'
+      question: "Can I customize aiestra for my workflows?",
+      answer: "Yes, aiestra is highly customizable. You can train the AI on your specific knowledge base, customize responses, integrate with your existing tools, and adapt workflows to match your business processes."
     },
     {
-      question: 'What\'s the deployment timeline for AI agents?',
-      answer: 'Most AI agents can be deployed in 2-4 weeks. Voice agents and chatbots are typically faster (2-3 weeks), while complex agentic AI systems may take 3-4 weeks for full autonomous operation.'
+      question: "Can aiestra integrate with our current tools?",
+      answer: "Yes, we support 200+ integrations including major CRMs like Salesforce and HubSpot, telephony platforms like Twilio and Genesys, and helpdesk systems like Zendesk and ServiceNow."
     },
     {
-      question: 'Do AI agents require ongoing maintenance?',
-      answer: 'Our AI agents are designed for minimal maintenance. They self-optimize, handle updates autonomously, and only require human oversight for major strategic changes or new capabilities.'
+      question: "How quickly can I get started?",
+      answer: "You can get started in as little as 24 hours. Our platform is designed for rapid deployment with pre-built templates, easy integration setup, and comprehensive onboarding support."
     },
     {
-      question: 'How do you ensure AI agent safety and compliance?',
-      answer: 'We implement multiple safety layers including decision boundaries, human oversight capabilities, compliance monitoring, and ethical AI frameworks. All agents operate within predefined safety parameters.'
+      question: "What if the AI says something off-brand?",
+      answer: "aiestra uses strict guardrails and approved knowledge sources to ensure all responses align with your brand voice and policies. The AI is trained on your specific content and cannot deviate from approved information."
+    },
+    {
+      question: "What happens if the AI gets stuck?",
+      answer: "Our AI is designed with fallback mechanisms and seamless human handoff capabilities. If the AI encounters an issue, it can transfer the call to a human agent while maintaining context and conversation history."
+    },
+    {
+      question: "Can aiestra filter spam calls?",
+      answer: "Yes, aiestra includes advanced spam detection and call filtering capabilities. It can identify and block unwanted calls while ensuring legitimate customers always get through to receive the support they need."
     }
-  ]
+  ];
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <section id="faq" className="section-padding bg-gray-50/50 dark:bg-gray-900/50">
-      <div className="container-custom">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-h2 font-sora font-bold mb-4">
-            AI Agent{' '}
-            <span className="gradient-text">FAQ</span>
-          </h2>
-          <p className="text-body text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Get answers to common questions about our autonomous AI agents, voice agents, and chatbot capabilities.
-          </p>
-        </motion.div>
+    <section className="relative py-32 overflow-hidden bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            {/* Left Column - Title and Introduction */}
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full uppercase tracking-wide">
+                FAQ
+              </div>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                Everything You Need to Know About aiestra's AI Voice Agents
+              </h2>
+            </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass dark:glass-dark rounded-2xl overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
-                  aria-expanded={openIndex === index}
-                  aria-controls={`faq-answer-${index}`}
-                >
-                  <h3 className="text-lg font-sora font-semibold pr-4">
-                    {faq.question}
-                  </h3>
-                  <motion.div
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex-shrink-0"
+            {/* Right Column - FAQ List */}
+            <div className="space-y-0">
+              {faqItems.map((item, index) => (
+                <div key={index} className="border-b border-gray-200 last:border-b-0">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 group"
                   >
-                    {openIndex === index ? (
-                      <ChevronUp size={20} className="text-primary-500" />
-                    ) : (
-                      <ChevronDown size={20} className="text-gray-400" />
-                    )}
-                  </motion.div>
+                    <span className="text-lg font-medium text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
+                      {item.question}
+                    </span>
+                    <span className={`text-gray-400 transition-transform duration-200 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}>
+                      ▼
+                    </span>
+                  </button>
+                  
+                  {/* Answer */}
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
+                  }`}>
+                    <p className="text-gray-600 leading-relaxed pr-8">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+              
+              {/* See More FAQs Link */}
+              <div className="pt-8">
+                <button className="text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200">
+                  See more FAQs →
                 </button>
-
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      id={`faq-answer-${index}`}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-8 pb-6">
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-16"
-        >
-          <div className="glass dark:glass-dark rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-h3 font-sora font-semibold mb-4">
-              Ready to Deploy AI Agents?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Our team is here to help you understand how autonomous AI agents can transform your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                onClick={onBookDemo}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary"
-              >
-                Schedule AI Demo
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary"
-              >
-                Contact Support
-              </motion.button>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQ 
+export default FAQ; 

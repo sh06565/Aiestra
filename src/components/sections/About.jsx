@@ -1,139 +1,119 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Shield, Zap, Users, TrendingUp } from 'lucide-react'
+import React from 'react';
+import MagicBento from '../ui/MagicBento';
 
 const About = () => {
+  const customCards = [
+    {
+      color: '#060010',
+      title: 'Intelligent Call Routing',
+      description: 'AI-powered call distribution ensures customers reach the right department or agent instantly, reducing wait times and improving satisfaction.',
+      label: 'Routing'
+    },
+    {
+      color: '#060010',
+      title: '24/7 Availability',
+      description: 'Never miss a customer call again. Our AI agents handle inquiries around the clock, providing consistent service quality.',
+      label: 'Always On'
+    },
+    {
+      color: '#060010',
+      title: 'Multi-Language Support',
+      description: 'Break down language barriers with support for 30+ languages, ensuring global customers feel understood and valued.',
+      label: 'Global'
+    },
+    {
+      color: '#060010',
+      title: 'Smart Analytics',
+      description: 'Gain deep insights into customer interactions, call patterns, and agent performance with comprehensive analytics and reporting.',
+      label: 'Insights'
+    },
+    {
+      color: '#060010',
+      title: 'Seamless Integration',
+      description: 'Connect with your existing CRM, helpdesk, and business tools for a unified customer experience across all touchpoints.',
+      label: 'Connect'
+    },
+    {
+      color: '#060010',
+      title: 'Custom Workflows',
+      description: 'Tailor AI responses and workflows to match your brand voice, business processes, and specific industry requirements.',
+      label: 'Custom'
+    }
+  ];
+
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section className="relative py-32 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      {/* Background Glass Orbs */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-black mb-8 leading-tight">
-              Not Just AI Chat —{' '}
-              <span className="bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent">
-                AI Voice Agents
-              </span>
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-purple-300/20 text-purple-200 text-sm font-medium rounded-full mb-6">
+              FEATURES
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+              Smart Features to Drive Growth
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Aiestra specializes in voice-first AI solutions optimized for lead capture and ROI. 
-              We help businesses never miss a call, qualify leads instantly, and scale operations 24/7.
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+              Harness the power of AI to transform your customer interactions, streamline operations, and unlock new growth opportunities with intelligent automation.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-2xl flex items-center justify-center">
-                  <Shield size={32} className="text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-medium text-black mb-4">Private & Secure</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Enterprise-grade security with end-to-end encryption. Your data stays private and compliant.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-2xl flex items-center justify-center">
-                  <Zap size={32} className="text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-medium text-black mb-4">Lightning Fast</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Instant lead qualification and response times. Convert callers before they hang up.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-2xl flex items-center justify-center">
-                  <Users size={32} className="text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-medium text-black mb-4">Human-Like</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Natural conversations that feel human. Advanced speech recognition and natural responses.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-2xl flex items-center justify-center">
-                  <TrendingUp size={32} className="text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-medium text-black mb-4">ROI Driven</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Proven to increase qualified leads and close rates. Measurable results from day one.
-              </p>
-            </motion.div>
+            
+            {/* Explore Features Button */}
+            <button className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 text-lg">
+              Explore Features
+            </button>
           </div>
 
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-20 bg-white rounded-2xl p-8 shadow-lg"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent mb-2">
-                  24/7
-                </div>
-                <div className="text-gray-600">Always Available</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent mb-2">
-                  37%
-                </div>
-                <div className="text-gray-600">Average Lead Increase</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 bg-clip-text text-transparent mb-2">
-                  10,000+
-                </div>
-                <div className="text-gray-600">Calls Handled Daily</div>
-              </div>
-            </div>
-          </motion.div>
+          {/* MagicBento Grid with Full Animations */}
+          <div className="flex justify-center">
+            <MagicBento 
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              spotlightRadius={300}
+              particleCount={12}
+              glowColor="132, 0, 255"
+              customCards={customCards}
+            />
+          </div>
+
+          {/* Additional Features Highlight */}
+          <div className="mt-20 text-center">
+            {/* <div className="inline-flex items-center space-x-8 bg-white/5 backdrop-blur-md border border-white/10 px-8 py-6 rounded-2xl"> */}
+              {/* <div className="flex items-center space-x-3">
+                <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span className="text-lg font-semibold text-white">AI-Powered Automation</span>
+              </div> */}
+              {/* <div className="flex items-center space-x-3">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span className="text-lg font-semibold text-white">Enterprise Security</span>
+              </div> */}
+              {/* <div className="flex items-center space-x-3">
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <span className="text-lg font-semibold text-white">Omnichannel Support</span>
+              </div> */}
+            {/* </div> */}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 

@@ -1,170 +1,91 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Shield, Award, CheckCircle } from 'lucide-react'
+import React from 'react';
 
 const ClientLogos = () => {
-  const clients = [
-    { name: 'TechCorp', logo: 'TC' },
-    { name: 'InnovateLab', logo: 'IL' },
-    { name: 'DataFlow', logo: 'DF' },
-    { name: 'CloudSync', logo: 'CS' },
-    { name: 'FutureTech', logo: 'FT' },
-    { name: 'SmartSolutions', logo: 'SS' },
-    { name: 'DigitalEdge', logo: 'DE' },
-    { name: 'NextGen', logo: 'NG' }
-  ]
-
-  const certifications = [
-    {
-      icon: Shield,
-      title: 'SOC 2 Type II',
-      description: 'Enterprise-grade security compliance'
-    },
-    {
-      icon: Award,
-      title: 'ISO 27001',
-      description: 'Information security management'
-    },
-    {
-      icon: CheckCircle,
-      title: 'GDPR Compliant',
-      description: 'Data protection and privacy'
-    }
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  }
+  const logos = [
+    { name: "IIT Madras", logo: "🏛️" },
+    { name: "Nvidia", logo: "🟢" },
+    { name: "Startup India", logo: "🇮🇳" },
+    { name: "Startup TN", logo: "🌿" },
+    { name: "Microsoft Startup Hub", logo: "🪟" },
+    { name: "MSME India", logo: "🏭" }
+  ];
 
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-h2 font-sora font-bold mb-4">
-            Trusted by Industry{' '}
-            <span className="gradient-text">Leaders</span>
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      {/* Background Glass Orbs */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-indigo-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-purple-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-6xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            Backed by the{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Best in Innovation
+            </span>
           </h2>
-          <p className="text-body text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Join hundreds of companies that trust Aiestra to power their AI initiatives 
-            with enterprise-grade security and reliability.
+          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+            Endorsed by industry leaders to deliver impact at scale through innovation and trust.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Client Logos */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center">
-            {clients.map((client, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center"
-              >
-                <div className="w-20 h-20 glass dark:glass-dark rounded-xl flex items-center justify-center group hover:bg-gradient-to-r hover:from-primary-500/10 hover:to-secondary-500/10 transition-all duration-300">
-                  <span className="text-lg font-bold text-gray-600 dark:text-gray-300 group-hover:gradient-text transition-all duration-300">
-                    {client.logo}
-                  </span>
+        {/* Logos Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-20">
+          {logos.map((company, index) => (
+            <div key={index} className="group">
+              <div className="relative p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20 text-center">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">{company.logo}</div>
+                  <h3 className="text-sm font-medium text-white/80">{company.name}</h3>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center"
-        >
-          <h3 className="text-h3 font-sora font-semibold mb-8">
-            Enterprise-Grade Security & Compliance
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="glass dark:glass-dark rounded-2xl p-6 text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <cert.icon size={32} className="text-primary-500" />
-                </div>
-                <h4 className="text-lg font-sora font-semibold mb-2">
-                  {cert.title}
-                </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {cert.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Trust Indicators */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="glass dark:glass-dark rounded-2xl p-8 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">500+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">Active Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">99.9%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">Uptime SLA</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">24/7</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">Support</div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🔒",
+                title: "Enterprise Security",
+                description: "Bank-level encryption and compliance with SOC2, HIPAA, and GDPR standards."
+              },
+              {
+                icon: "⚡",
+                title: "99.99% Uptime",
+                description: "Reliable infrastructure with guaranteed uptime for mission-critical operations."
+              },
+              {
+                icon: "🌍",
+                title: "Global Reach",
+                description: "Deploy voice agents in 30+ languages across multiple time zones."
+              }
+            ].map((indicator, index) => (
+              <div key={index} className="group">
+                <div className="relative p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20 text-center">
+                  {/* Glass effect glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-3xl mb-4">{indicator.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-3">{indicator.title}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{indicator.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ClientLogos 
+export default ClientLogos; 

@@ -94,6 +94,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Bottom Right Demo Toggle */}

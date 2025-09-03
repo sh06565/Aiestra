@@ -1,213 +1,156 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import React from 'react';
 
-const Solutions = ({ onBookDemo }) => {
+const Solutions = () => {
   const solutions = [
     {
-      id: 'voice-agents',
-      title: 'AI Voice Agents',
-      description: 'Natural voice interactions that understand context and respond with human-like intelligence.',
-      features: ['Natural speech recognition', 'Context awareness', 'Multi-language support', 'Real-time processing'],
-      color: 'from-blue-500 to-purple-500',
-      isPrimary: true,
-      demo: {
-        title: 'Voice Agent Demo',
-        messages: [
-          { type: 'user', text: 'Hello, I need help with my order' },
-          { type: 'ai', text: 'Hi! I can help you with your order. I can see you have an order #12345. What would you like to know?' },
-          { type: 'user', text: 'When will it be delivered?' },
-          { type: 'ai', text: 'Your order is scheduled for delivery tomorrow between 2-4 PM. Would you like me to send you a notification when it\'s out for delivery?' }
-        ]
-      }
+      title: "Seamless System Integration",
+      description: "Easily connect our solutions with your existing tools like HubSpot, Slack, and Google Calendar. Simplify workflows and save valuable time with no learning curve.",
+      icon: "🔌",
+      highlight: "200+ Integrations Supported"
     },
     {
-      id: 'agentic-chatbots',
-      title: 'Agentic AI Chatbots',
-      description: 'Intelligent conversational agents that can understand, reason, and take actions autonomously.',
-      features: ['Autonomous decision making', 'Context understanding', 'Multi-step reasoning', 'Action execution'],
-      color: 'from-green-500 to-emerald-500',
-      demo: {
-        title: 'Agentic Chatbot Demo',
-        messages: [
-          { type: 'user', text: 'I need to schedule a meeting with the team' },
-          { type: 'ai', text: 'I\'ll help you schedule that meeting. I can see your calendar and your team\'s availability. What time works best for you?' },
-          { type: 'user', text: 'Tomorrow at 2 PM' },
-          { type: 'ai', text: 'Perfect! I\'ve scheduled the meeting for tomorrow at 2 PM and sent invites to your team. I\'ve also reserved the conference room and added it to everyone\'s calendar.' }
-        ]
-      }
+      title: "Analytics That Drive Results",
+      description: "Track every call, analyze detailed metrics, and gain valuable insights into customer behavior to fuel smarter business decisions.",
+      icon: "📊",
+      highlight: "Real-time Insights"
     },
     {
-      id: 'embedded-ai',
-      title: 'Embedded AI Systems',
-      description: 'AI seamlessly integrated into your existing applications and workflows.',
-      features: ['Seamless integration', 'Workflow automation', 'Real-time processing', 'Scalable architecture'],
-      color: 'from-purple-500 to-pink-500',
-      demo: {
-        title: 'Embedded AI Demo',
-        messages: [
-          { type: 'user', text: 'Analyze this customer feedback' },
-          { type: 'ai', text: 'I\'ve analyzed the feedback and identified key themes: product quality (positive), delivery speed (needs improvement), and customer service (excellent). I\'ve also flagged 3 urgent issues for immediate attention.' },
-          { type: 'user', text: 'Generate a response template' },
-          { type: 'ai', text: 'Here\'s a personalized response template based on the feedback patterns. I\'ve included specific solutions for the delivery issues and highlighted the positive aspects to maintain customer satisfaction.' }
-        ]
-      }
-    },
-    {
-      id: 'agentic-automations',
-      title: 'Agentic AI Automations',
-      description: 'Intelligent automation systems that can learn, adapt, and optimize processes autonomously.',
-      features: ['Process optimization', 'Learning capabilities', 'Adaptive workflows', 'Performance monitoring'],
-      color: 'from-orange-500 to-red-500',
-      demo: {
-        title: 'Automation Demo',
-        messages: [
-          { type: 'user', text: 'Optimize our inventory management' },
-          { type: 'ai', text: 'I\'ve analyzed your inventory patterns and identified optimization opportunities. I\'ve automatically adjusted reorder points and created a predictive model that reduces stockouts by 40%.' },
-          { type: 'user', text: 'Show me the savings' },
-          { type: 'ai', text: 'Based on the optimizations, you\'ll save approximately $15,000 monthly in carrying costs and reduce stockouts by 40%. The system will continue learning and improving over time.' }
-        ]
-      }
+      title: "Enterprise-Level Security",
+      description: "We combine strong compliance, strict data control, and 99.99% uptime to meet the demands of enterprise-grade operations — without compromising speed or flexibility.",
+      icon: "🛡️",
+      highlight: "SOC2, HIPAA, GDPR-Compliant"
     }
-  ]
+  ];
+
+  const features = [
+    {
+      title: "Strict Guardrails, No Hallucinations",
+      description: "AI pulls from approved knowledge sources to ensure accurate, brand-safe replies. No guesswork or off-script responses, just clear boundaries.",
+      icon: "🚫"
+    },
+    {
+      title: "Data Managed In-House",
+      description: "All customer data and call logs are encrypted and stored internally. Nothing goes to third parties, ensuring total control and compliance.",
+      icon: "🏠"
+    },
+    {
+      title: "PCI DSS Compliant",
+      description: "Protect payment and cardholder data with built-in PCI DSS compliance. Ideal for secure workflows like payments or account verification.",
+      icon: "💳"
+    }
+  ];
 
   return (
-    <section className="bg-white py-32">
-      {/* Blur Background Effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-100/30 to-purple-100/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-green-100/20 to-blue-100/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-orange-100/15 to-red-100/15 rounded-full blur-3xl"></div>
+    <section className="relative py-32 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      {/* Background Glass Orbs */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-indigo-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          {/* Main Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-32"
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-black mb-12 leading-tight">
-              AI Solutions that work for you
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with intelligent AI solutions designed for real-world applications.
-            </p>
-          </motion.div>
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-6xl mx-auto text-center mb-24">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-tight">
+            Explore More Powerful{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Features
+            </span>
+          </h2>
+          <p className="text-2xl md:text-3xl text-white/80 max-w-5xl mx-auto leading-relaxed">
+            Unlock seamless integrations, actionable insights, and enhanced collaboration with AI.
+          </p>
+        </div>
 
-          {/* Solutions Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={solution.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`group cursor-pointer ${solution.isPrimary ? 'lg:col-span-2' : ''}`}
-              >
-                <Link to={`/solutions/${solution.id}`}>
-                  <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-10 h-full hover:shadow-xl transition-all duration-500 hover:border-gray-300 group-hover:bg-white/90">
-                    {/* Subtle blur effect behind each card */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50 rounded-2xl blur-sm -z-10"></div>
-                    
-                    {/* Content */}
-                    <div className="space-y-8 relative z-10">
-                      <h3 className="text-4xl font-medium text-black leading-tight">
-                        {solution.title}
-                      </h3>
-                      <p className="text-xl text-gray-600 leading-relaxed">
-                        {solution.description}
-                      </p>
-
-                      {/* Features */}
-                      <div className="space-y-4">
-                        {solution.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center text-base text-gray-600">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                            {feature}
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Chat Interface Demo */}
-                      <div className="mt-8">
-                        <div className="bg-gray-50/50 rounded-xl p-6 border border-gray-200/50">
-                          <div className="flex items-center mb-4">
-                            <div className="flex space-x-2 mr-3">
-                              <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                            </div>
-                            <span className="text-sm text-gray-500 font-medium">{solution.demo.title}</span>
-                          </div>
-                          
-                          <div className="space-y-4">
-                            {solution.demo.messages.map((message, msgIndex) => (
-                              <div key={msgIndex} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
-                                  message.type === 'user' 
-                                    ? 'bg-gray-200 text-black' 
-                                    : 'bg-gray-700 text-white'
-                                }`}>
-                                  {message.type === 'ai' && (
-                                    <div className="flex items-center mb-2">
-                                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-                                      <span className="text-xs text-gray-300">AI Assistant</span>
-                                    </div>
-                                  )}
-                                  <p className="text-sm leading-relaxed">{message.text}</p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <div className="flex items-center text-black font-medium group-hover:translate-x-2 transition-transform duration-300 pt-6">
-                        <span className="text-xl">Learn more</span>
-                        <ArrowRight size={24} className="ml-3" />
-                      </div>
-                    </div>
+        {/* Main Solutions Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-24">
+          {solutions.map((solution, index) => (
+            <div key={index} className="group">
+              <div className="relative p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-3xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6">{solution.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-6">{solution.title}</h3>
+                  <p className="text-white/80 leading-relaxed text-lg mb-6">{solution.description}</p>
+                  <div className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-lg font-medium">
+                    {solution.highlight}
                   </div>
-                </Link>
-              </motion.div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Security Features */}
+        <div className="max-w-6xl mx-auto text-center mb-20">
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-10">
+            Security & Compliance
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
+          {features.map((feature, index) => (
+            <div key={index} className="group">
+              <div className="relative p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20 text-center h-full">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-3xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6">{feature.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-6">{feature.title}</h3>
+                  <p className="text-white/80 leading-relaxed text-lg">{feature.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Dashboard Preview */}
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-10">
+            Optimize Your Workflow with Our Dashboard
+          </h3>
+          <p className="text-2xl text-white/80 max-w-4xl mx-auto mb-16">
+            Unlock the full potential of AI with a user-friendly dashboard designed to streamline operations and maximize efficiency.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                title: "Gain Actionable Insights",
+                description: "Dive deep into analytics with detailed call logs, performance metrics, and AI-driven insights. Empower your decisions with real-time data at your fingertips.",
+                icon: "📈"
+              },
+              {
+                title: "Run Outbound Campaigns",
+                description: "Seamlessly execute outbound calls directly from the dashboard. Monitor progress, track outcomes, and optimize your outreach for maximum impact.",
+                icon: "📞"
+              },
+              {
+                title: "Access Recordings and Summaries",
+                description: "Review call recordings, explore accurate transcriptions, and skim through AI-generated summaries to uncover valuable customer insights effortlessly.",
+                icon: "🎯"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group">
+                <div className="relative p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20">
+                  {/* Glass effect glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-3xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-5xl mb-6">{feature.icon}</div>
+                    <h3 className="text-2xl font-bold text-white mb-6">{feature.title}</h3>
+                    <p className="text-white/80 leading-relaxed text-lg">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-
-          {/* Additional Info Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-center"
-          >
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-medium text-black mb-8">
-                Ready to transform your business?
-              </h2>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-                Our AI solutions are designed to integrate seamlessly with your existing systems and workflows, providing immediate value while scaling with your business needs.
-              </p>
-              <button
-                onClick={onBookDemo}
-                className="inline-flex items-center px-10 py-5 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-lg"
-              >
-                <span className="mr-3">Request a demo</span>
-                <ArrowRight size={24} />
-              </button>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Solutions 
+export default Solutions; 

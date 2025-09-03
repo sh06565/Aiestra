@@ -1,77 +1,101 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { ArrowRight, Phone, Calendar } from 'lucide-react'
+import React from 'react';
 
-const CallToAction = ({ onBookDemo }) => {
+const CallToAction = () => {
   return (
-    <section className="py-24 bg-gradient-to-r from-cyan-500 to-indigo-600">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-white mb-8 leading-tight">
-              Ready to Never Miss a Lead Again?
-            </h2>
-            <p className="text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed mb-8">
-              Join hundreds of businesses already scaling with AI voice agents. 
-              See how Aiestra can transform your lead capture and boost your ROI.
-            </p>
-          </motion.div>
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      {/* Background Glass Orbs */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-indigo-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-indigo-400/15 to-purple-500/15 rounded-full blur-3xl"></div>
+      </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
-            <button
-              onClick={onBookDemo}
-              className="inline-flex items-center px-10 py-5 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-500 text-lg"
-            >
-              <Calendar size={24} className="mr-3" />
-              <span>Book a Demo</span>
-              <ArrowRight size={24} className="ml-3" />
-            </button>
-            
-            <button className="inline-flex items-center px-10 py-5 bg-transparent text-white font-medium rounded-lg border-2 border-white hover:bg-white hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-500 text-lg">
-              <Phone size={24} className="mr-3" />
-              <span>Hear Our AI in Action</span>
-            </button>
-          </motion.div>
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            Ready to{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Revolutionize
+            </span>{' '}
+            your conversations?
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-12">
+            Discover how Interacts AI is helping businesses streamline communication and enhance customer experiences with intelligent voice bots.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-white mb-2">14 Days</div>
-                <div className="text-cyan-100">Free Trial</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white mb-2">No Setup</div>
-                <div className="text-cyan-100">Fees</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                <div className="text-cyan-100">Support</div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <div className="group">
+              <div className="relative px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/40 hover:shadow-2xl hover:shadow-purple-500/30">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105">
+                    Request Demo
+                  </button>
+                </div>
               </div>
             </div>
-          </motion.div>
+
+            <div className="group">
+              <div className="relative px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/40 hover:shadow-2xl hover:shadow-purple-500/30">
+                {/* Glass effect glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                
+                <div className="relative z-10">
+                  <button className="px-8 py-3 bg-white/20 text-white font-bold rounded-xl border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 transform hover:scale-105">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Preview */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-8">
+              Frequently Asked Questions
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  question: "What are the pricing options for Interacts AI voice bot services?",
+                  answer: "We offer three main plans: Starter ($99/month), Professional ($299/month), and Enterprise (custom pricing). All plans include our core AI voice agent technology with different feature sets and call volumes."
+                },
+                {
+                  question: "Does your voice bot support multiple languages?",
+                  answer: "Yes! Our AI voice agents support over 100 languages, ensuring global reach and enhanced customer experiences for businesses operating internationally."
+                },
+                {
+                  question: "How customizable is the voice bot for industry-specific needs?",
+                  answer: "Highly customizable! We tailor every detail to fit your unique business requirements, from industry-specific terminology to custom workflows and integrations."
+                },
+                {
+                  question: "What kind of support do Enterprise clients receive?",
+                  answer: "Enterprise clients receive dedicated account management, custom development, advanced security features, SLA guarantees, and priority support for mission-critical operations."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="group">
+                  <div className="relative p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/20">
+                    {/* Glass effect glow */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-lg font-bold text-white mb-3">{faq.question}</h4>
+                      <p className="text-white/80 text-sm leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CallToAction
+export default CallToAction;
 
