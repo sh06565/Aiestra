@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const Navbar = ({ onBookDemo }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
@@ -11,7 +11,7 @@ const Navbar = ({ onBookDemo }) => {
     { label: 'CASE STUDIES', href: '/case-studies' },
     { label: 'INSIGHTS', href: '/insights' },
     { label: 'COMPANY', href: '/company' },
-    { label: 'BOOK DEMO', href: '#', onClick: onBookDemo }
+    { label: 'BOOK DEMO', href: '#', onClick: () => console.log('Book Demo clicked') }
   ]
 
   const isActive = (href) => {
@@ -73,7 +73,7 @@ const Navbar = ({ onBookDemo }) => {
       {isOpen && (
         <div className="mobile-menu-overlay" onClick={() => setIsOpen(false)}>
           <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <div key={item.href} className="mobile-menu-item">
                 {item.onClick ? (
                   <button

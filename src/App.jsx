@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import { Navbar, Footer, BookingModal } from './components'
+import { Navbar, Footer } from './components'
 import { Home, SolutionsPage, CaseStudies, Insights, Company } from './pages'
 import { ThemeProvider } from './context'
 import { validateAppConfig, logConfigStatus } from './utils/validateConfig'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   useEffect(() => {
     // Validate configuration on startup
@@ -23,16 +22,6 @@ function App() {
 
     return () => clearTimeout(timer)
   }, [])
-
-  // Function to open booking modal
-  const openBookingModal = () => {
-    setIsBookingModalOpen(true)
-  }
-
-  // Function to close booking modal
-  const closeBookingModal = () => {
-    setIsBookingModalOpen(false)
-  }
 
   if (isLoading) {
     return (
@@ -55,21 +44,20 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="min-h-screen bg-white">
-          <Navbar onBookDemo={openBookingModal} />
+          <Navbar />
           
           <AnimatePresence mode="wait">
             <Routes>
-              <Route path="/" element={<Home onBookDemo={openBookingModal} />} />
-              <Route path="/solutions" element={<SolutionsPage onBookDemo={openBookingModal} />} />
-              <Route path="/solutions/:solutionId" element={<SolutionsPage onBookDemo={openBookingModal} />} />
-              <Route path="/case-studies" element={<CaseStudies onBookDemo={openBookingModal} />} />
-              <Route path="/insights" element={<Insights onBookDemo={openBookingModal} />} />
-              <Route path="/company" element={<Company onBookDemo={openBookingModal} />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/solutions" element={<SolutionsPage />} />
+              <Route path="/solutions/:solutionId" element={<SolutionsPage />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/company" element={<Company />} />
             </Routes>
           </AnimatePresence>
 
           <Footer />
-          <BookingModal isOpen={isBookingModalOpen} onClose={closeBookingModal} />
           <SpeedInsights />
         </div>
       </Router>

@@ -11,18 +11,18 @@ import {
   CallToAction 
 } from '../components'
 
-const Home = ({ onBookDemo }) => {
+const Home = () => {
   return (
     <main>
-      <Hero onBookDemo={onBookDemo} />
+      <Hero />
       <About />
       <HowItWorks />
       <KeyBenefits />
-      <Solutions onBookDemo={onBookDemo} />
+      <Solutions />
       <CaseStudies />
       <Testimonials />
-      <Pricing onBookDemo={onBookDemo} />
-      <CallToAction onBookDemo={onBookDemo} />
+      <Pricing />
+      <CallToAction />
     </main>
   )
 }
