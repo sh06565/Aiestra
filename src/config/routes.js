@@ -1,9 +1,10 @@
 export const ROUTES = {
   HOME: '/',
   SOLUTIONS: '/solutions',
-  CASE_STUDIES: '/case-studies',
+  SERVICES: '/services',
+  INDUSTRIES: '/industries',
   INSIGHTS: '/insights',
-  COMPANY: '/company',
+  CONTACT: '/contact',
 };
 
 export const ROUTE_CONFIG = [
@@ -11,36 +12,42 @@ export const ROUTE_CONFIG = [
     path: ROUTES.HOME,
     element: 'Home',
     title: 'Home',
-    description: 'Aiestra - Human-Centered AI Solutions'
+    description: 'Aiestra - AI Voice Agent Services'
   },
   {
     path: ROUTES.SOLUTIONS,
     element: 'SolutionsPage',
     title: 'Solutions',
-    description: 'AI Solutions and Services'
+    description: 'AI Voice Agent Service Suites'
   },
   {
     path: `${ROUTES.SOLUTIONS}/:solutionId`,
     element: 'SolutionsPage',
     title: 'Solution Details',
-    description: 'AI Solution Details'
+    description: 'AI Voice Agent Solution Details'
   },
   {
-    path: ROUTES.CASE_STUDIES,
-    element: 'CaseStudies',
-    title: 'Case Studies',
-    description: 'Success Stories and Case Studies'
+    path: ROUTES.SERVICES,
+    element: 'Services',
+    title: 'Services',
+    description: 'Implementation, Development, and Support Services'
+  },
+  {
+    path: ROUTES.INDUSTRIES,
+    element: 'Industries',
+    title: 'Industries',
+    description: 'Industry-Specific AI Voice Solutions'
   },
   {
     path: ROUTES.INSIGHTS,
     element: 'Insights',
     title: 'Insights',
-    description: 'AI Insights and Blog'
+    description: 'AI Voice Technology Insights and Best Practices'
   },
   {
-    path: ROUTES.COMPANY,
-    element: 'Company',
-    title: 'Company',
-    description: 'About Aiestra'
+    path: ROUTES.CONTACT,
+    element: 'Contact',
+    title: 'Contact',
+    description: 'Get in Touch - AI Voice Agent Consultation'
   }
 ];

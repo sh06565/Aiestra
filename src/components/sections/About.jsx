@@ -4,37 +4,37 @@ import MagicBento from '../ui/MagicBento';
 const About = () => {
   const customCards = [
     {
-      color: '#060010',
+      color: '#f8fafc',
       title: 'Intelligent Call Routing',
       description: 'AI-powered call distribution ensures customers reach the right department or agent instantly, reducing wait times and improving satisfaction.',
       label: 'Routing'
     },
     {
-      color: '#060010',
+      color: '#f1f5f9',
       title: '24/7 Availability',
       description: 'Never miss a customer call again. Our AI agents handle inquiries around the clock, providing consistent service quality.',
       label: 'Always On'
     },
     {
-      color: '#060010',
+      color: '#e2e8f0',
       title: 'Multi-Language Support',
       description: 'Break down language barriers with support for 30+ languages, ensuring global customers feel understood and valued.',
       label: 'Global'
     },
     {
-      color: '#060010',
+      color: '#f8fafc',
       title: 'Smart Analytics',
       description: 'Gain deep insights into customer interactions, call patterns, and agent performance with comprehensive analytics and reporting.',
       label: 'Insights'
     },
     {
-      color: '#060010',
+      color: '#f1f5f9',
       title: 'Seamless Integration',
       description: 'Connect with your existing CRM, helpdesk, and business tools for a unified customer experience across all touchpoints.',
       label: 'Connect'
     },
     {
-      color: '#060010',
+      color: '#e2e8f0',
       title: 'Custom Workflows',
       description: 'Tailor AI responses and workflows to match your brand voice, business processes, and specific industry requirements.',
       label: 'Custom'
@@ -56,15 +56,15 @@ const About = () => {
             <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-6">
               FEATURES
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8">
               Smart Features to Drive Growth
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
               Harness the power of AI to transform your customer interactions, streamline operations, and unlock new growth opportunities with intelligent automation.
             </p>
             
             {/* Explore Features Button */}
-            <button className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 text-lg">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 text-base sm:text-lg">
               Explore Features
             </button>
           </div>

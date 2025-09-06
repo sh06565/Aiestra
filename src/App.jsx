@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Navbar, Footer } from './components'
-import { Home, SolutionsPage, CaseStudies, Insights, Company } from './pages'
+import { Home, SolutionsPage, Services, Industries, Insights, Contact, NotFound } from './pages'
 import { ThemeProvider } from './context'
 import { validateAppConfig, logConfigStatus } from './utils/validateConfig'
+
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -43,6 +54,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-white">
           <Navbar />
           
@@ -51,9 +63,11 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/solutions/:solutionId" element={<SolutionsPage />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/industries" element={<Industries />} />
               <Route path="/insights" element={<Insights />} />
-              <Route path="/company" element={<Company />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence>
 

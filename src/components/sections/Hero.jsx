@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
           <span className="block">Never Miss a Lead Again</span>
           <span className="block">
             <span className="text-white">Scale with </span>
@@ -61,20 +61,20 @@ const Hero = () => {
           {/* Microphone Button */}
           <div className="flex justify-center">
             <button className="group relative">
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/25">
-                <svg className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/25">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
                   <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
                 </svg>
               </div>
               {/* Glow effect */}
-              <div className="absolute inset-0 w-20 h-20 bg-purple-500/20 rounded-full blur-xl scale-150 group-hover:scale-175 transition-all duration-300"></div>
+              <div className="absolute inset-0 w-16 h-16 sm:w-20 sm:h-20 bg-purple-500/20 rounded-full blur-xl scale-150 group-hover:scale-175 transition-all duration-300"></div>
             </button>
           </div>
 
           {/* "Try it out" Text */}
           <div className="text-center">
-            <p className="text-xl md:text-2xl text-white/90 font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-medium">
               Try it out
             </p>
           </div>
@@ -82,8 +82,8 @@ const Hero = () => {
           {/* Suggested Query Glass Effect */}
           <div className="flex justify-center">
             <div className="relative group">
-              <div className="px-8 py-4 bg-white/5 backdrop-blur-md border border-purple-400/30 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-500/20">
-                <p className="text-white/90 text-lg md:text-xl font-medium">
+              <div className="px-6 py-3 sm:px-8 sm:py-4 bg-white/5 backdrop-blur-md border border-purple-400/30 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-500/20">
+                <p className="text-white/90 text-base sm:text-lg md:text-xl font-medium">
                   Try asking: <span className="text-white font-semibold">
                     {suggestedQueries[currentQuery]}
                   </span>

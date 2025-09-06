@@ -2,22 +2,23 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import config from '../../config/environment'
+import { CalButton } from '../ui'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
-    product: [
-      { name: 'Platform', href: '/' },
+    solutions: [
       { name: 'Solutions', href: '/solutions' },
-      { name: 'Research', href: '/case-studies' }
+      { name: 'Services', href: '/services' },
+      { name: 'Industries', href: '/industries' }
     ],
     company: [
-      { name: 'About', href: '/about' },
-      { name: 'Resources', href: '/about' }
+      { name: 'Insights', href: '/insights' },
+      { name: 'Contact', href: '/contact' }
     ],
     support: [
-      { name: 'Contact', href: `mailto:${config.contact.email}` }
+      { name: 'Book Consultation', href: '#', isCalButton: true }
     ]
   }
 
@@ -56,16 +57,16 @@ const Footer = () => {
               </motion.div>
             </div>
 
-            {/* Product Links */}
+            {/* Solutions Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="font-semibold mb-6 text-white">Product</h4>
+              <h4 className="font-semibold mb-6 text-white">Solutions</h4>
               <ul className="space-y-3">
-                {footerLinks.product.map((link) => (
+                {footerLinks.solutions.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
@@ -99,6 +100,37 @@ const Footer = () => {
                 ))}
               </ul>
             </motion.div>
+
+            {/* Support Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h4 className="font-semibold mb-6 text-white">Support</h4>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link) => (
+                  <li key={link.name}>
+                    {link.isCalButton ? (
+                      <CalButton
+                        calLink="aiestra/30min"
+                        className="text-purple-200 hover:text-white transition-colors duration-200 text-sm cursor-pointer"
+                      >
+                        {link.name}
+                      </CalButton>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-purple-200 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
 
           {/* Bottom Section */}
@@ -114,18 +146,9 @@ const Footer = () => {
                 © {currentYear} Aiestra. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <Link
-                  to="/privacy"
-                  className="text-purple-300 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  to="/terms"
-                  className="text-purple-300 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Terms of Service
-                </Link>
+                <span className="text-purple-300 text-sm">
+                  AI Voice Agent Solutions
+                </span>
               </div>
             </div>
           </motion.div>

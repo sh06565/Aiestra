@@ -73,6 +73,14 @@ export default {
         'body': 'clamp(1rem, 2vw, 1.125rem)',
         'small': 'clamp(0.875rem, 1.5vw, 1rem)',
       },
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',

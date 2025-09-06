@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { CalButton } from '../ui'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -8,10 +9,11 @@ const Navbar = () => {
   const navItems = [
     { label: 'HOME', href: '/' },
     { label: 'SOLUTIONS', href: '/solutions' },
-    { label: 'CASE STUDIES', href: '/case-studies' },
+    { label: 'SERVICES', href: '/services' },
+    { label: 'INDUSTRIES', href: '/industries' },
     { label: 'INSIGHTS', href: '/insights' },
-    { label: 'COMPANY', href: '/company' },
-    { label: 'BOOK DEMO', href: '#', onClick: () => console.log('Book Demo clicked') }
+    { label: 'CONTACT', href: '/contact' },
+    { label: 'BOOK A CONSULTATION', href: '#', isCalButton: true }
   ]
 
   const isActive = (href) => {
@@ -34,7 +36,15 @@ const Navbar = () => {
         <div className="nav-items">
           {navItems.map((item) => (
             <div key={item.href} className="nav-item-wrapper">
-              {item.onClick ? (
+              {item.isCalButton ? (
+                <CalButton
+                  calLink="aiestra/30min"
+                  className={`nav-item ${isActive(item.href) ? 'active' : ''}`}
+                >
+                  {item.label}
+                  {isActive(item.href) && <div className="active-indicator" />}
+                </CalButton>
+              ) : item.onClick ? (
                 <button
                   onClick={item.onClick}
                   className={`nav-item ${isActive(item.href) ? 'active' : ''}`}
@@ -75,7 +85,15 @@ const Navbar = () => {
           <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
             {navItems.map(item => (
               <div key={item.href} className="mobile-menu-item">
-                {item.onClick ? (
+                {item.isCalButton ? (
+                  <CalButton
+                    calLink="aiestra/30min"
+                    onClick={() => setIsOpen(false)}
+                    className={`mobile-link ${isActive(item.href) ? 'active' : ''}`}
+                  >
+                    {item.label}
+                  </CalButton>
+                ) : item.onClick ? (
                   <button
                     onClick={() => {
                       item.onClick()
@@ -99,6 +117,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
     </div>
   )
 }

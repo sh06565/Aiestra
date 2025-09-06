@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Security.css';
 
 const Security = () => {
   const securityFeatures = [
@@ -83,10 +84,10 @@ const Security = () => {
     <section className="relative py-32 overflow-hidden bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Side - Visual Graphic with Grid Background */}
             <div className="relative flex justify-center lg:justify-start">
-              <div className="relative w-96 h-96">
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96">
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl opacity-60" 
                      style={{
@@ -100,8 +101,8 @@ const Security = () => {
                 
                 {/* Central Purple Lock */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-36 h-36 bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl flex items-center justify-center shadow-2xl z-10">
-                    <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-28 h-28 sm:w-36 sm:h-36 bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl flex items-center justify-center shadow-2xl z-10">
+                    <svg className="w-16 h-16 sm:w-20 sm:h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
@@ -109,48 +110,58 @@ const Security = () => {
 
                 {/* Connecting Lines - Concentric Circles */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-80 h-80 border border-gray-300/30 rounded-full"></div>
-                  <div className="absolute w-64 h-64 border border-gray-300/20 rounded-full"></div>
-                  <div className="absolute w-48 h-48 border border-gray-300/10 rounded-full"></div>
+                  <div className="w-64 h-64 sm:w-80 sm:h-80 border border-gray-300/30 rounded-full"></div>
+                  <div className="absolute w-48 h-48 sm:w-64 sm:h-64 border border-gray-300/20 rounded-full"></div>
+                  <div className="absolute w-32 h-32 sm:w-48 sm:h-48 border border-gray-300/10 rounded-full"></div>
                 </div>
 
-                {/* Compliance Logos in Circular Arrangement */}
-                {/* Top-Left - AICPA SOC 2 */}
-                <div className="absolute top-4 left-4 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="w-28 h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl">
-                    <span className="text-white text-xs font-bold text-center leading-tight">
-                      <span className="block">AICPA</span>
-                      <span className="block">SOC 2</span>
-                      <span className="block text-xs opacity-80">on track</span>
-                    </span>
-                  </div>
-                </div>
+                {/* Orbital Animation Container */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative w-80 h-80 sm:w-96 sm:h-96">
+                    {/* Orbital Path */}
+                    <div className="absolute inset-0 border border-gray-300/20 rounded-full"></div>
+                    
+                    {/* Orbiting Icons Container */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {/* AICPA SOC 2 */}
+                      <div className="absolute animate-orbit-1">
+                        <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl">
+                          <span className="text-white text-xs font-bold text-center leading-tight">
+                            <span className="block">AICPA</span>
+                            <span className="block">SOC 2</span>
+                            <span className="block text-xs opacity-80">on track</span>
+                          </span>
+                        </div>
+                      </div>
 
-                {/* Top-Right - GDPR */}
-                <div className="absolute top-4 right-4 transform translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="w-28 h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl relative">
-                    <div className="absolute inset-2 border border-white/30 rounded-full"></div>
-                    <span className="text-white text-lg font-bold">GDPR</span>
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="absolute -top-2 -left-1 w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <div className="absolute -bottom-1 -right-2 w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  </div>
-                </div>
+                      {/* GDPR */}
+                      <div className="absolute animate-orbit-2">
+                        <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl relative">
+                          <div className="absolute inset-2 border border-white/30 rounded-full"></div>
+                          <span className="text-white text-sm sm:text-lg font-bold">GDPR</span>
+                          <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+                          <div className="absolute -top-2 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full"></div>
+                          <div className="absolute -bottom-1 -right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full"></div>
+                        </div>
+                      </div>
 
-                {/* Bottom-Left - HIPAA */}
-                <div className="absolute bottom-4 left-4 transform -translate-x-1/2 translate-y-1/2 z-20">
-                  <div className="w-28 h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-xl">
-                    <span className="text-white text-lg font-bold">HIPAA</span>
-                  </div>
-                </div>
+                      {/* HIPAA */}
+                      <div className="absolute animate-orbit-3">
+                        <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-xl">
+                          <span className="text-white text-sm sm:text-lg font-bold">HIPAA</span>
+                        </div>
+                      </div>
 
-                {/* Bottom-Right - PCI DSS */}
-                <div className="absolute bottom-4 right-4 transform translate-x-1/2 translate-y-1/2 z-20">
-                  <div className="w-28 h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl">
-                    <span className="text-white text-xs font-bold text-center leading-tight">
-                      <span className="block">PCI DSS</span>
-                      <span className="block">COMPLIANT</span>
-                    </span>
+                      {/* PCI DSS */}
+                      <div className="absolute animate-orbit-4">
+                        <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex flex-col items-center justify-center shadow-xl">
+                          <span className="text-white text-xs font-bold text-center leading-tight">
+                            <span className="block">PCI DSS</span>
+                            <span className="block">COMPLIANT</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -176,19 +187,21 @@ const Security = () => {
                 {securityFeatures.map((feature, index) => (
                   <div key={index} className="group">
                     <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-purple-300">
-                      {/* Icon */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                        {getIconComponent(feature.icon)}
-                      </div>
-                      
-                      {/* Content */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
-                          {feature.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed text-sm">
-                          {feature.description}
-                        </p>
+                      <div className="flex items-start space-x-4">
+                        {/* Icon */}
+                        <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                          {getIconComponent(feature.icon)}
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                            {feature.title}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {feature.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

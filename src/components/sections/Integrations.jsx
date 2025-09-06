@@ -117,28 +117,28 @@ const Integrations = () => {
             <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-6">
               INTEGRATIONS
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               Connect to Your CRM, Telephony & Tools
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed mb-12">
               No need to change your existing tools, aiestra connects to your tech stack with enterprise-grade APIs and out-of-the-box integrations. We work with platforms like Genesys, Twilio, Avaya, and Five9, CRMs like Salesforce, HubSpot, and Zendesk, and helpdesk systems including Freshdesk, ServiceNow, and Jira to streamline support, follow-ups, and lead conversions.
             </p>
             
             {/* Explore Integrations Button */}
-            <button className="px-8 py-4 bg-white border-2 border-gray-900 text-gray-900 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 text-lg hover:bg-gray-900 hover:text-white">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-white border-2 border-gray-900 text-gray-900 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 text-base sm:text-lg hover:bg-gray-900 hover:text-white">
               Explore Integrations
             </button>
           </div>
 
           {/* Auto-Moving Logo Carousel */}
           <div className="relative">
-            <div className="h-32 flex items-center justify-center">
+            <div className="h-24 sm:h-32 flex items-center justify-center">
               <LogoLoop
                 logos={integrationLogos}
                 speed={80}
                 direction="left"
-                logoHeight={48}
-                gap={40}
+                logoHeight={32}
+                gap={32}
                 pauseOnHover
                 scaleOnHover
                 fadeOut

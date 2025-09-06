@@ -54,13 +54,13 @@ const FAQ = () => {
     <section className="relative py-32 overflow-hidden bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left Column - Title and Introduction */}
             <div className="space-y-8">
               <div className="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full uppercase tracking-wide">
                 FAQ
               </div>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 Everything You Need to Know About aiestra's AI Voice Agents
               </h2>
             </div>
@@ -71,9 +71,9 @@ const FAQ = () => {
                 <div key={index} className="border-b border-gray-200 last:border-b-0">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 group"
+                    className="w-full py-4 sm:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 group"
                   >
-                    <span className="text-lg font-medium text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
+                    <span className="text-base sm:text-lg font-medium text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
                       {item.question}
                     </span>
                     <span className={`text-gray-400 transition-transform duration-200 ${
@@ -85,9 +85,9 @@ const FAQ = () => {
                   
                   {/* Answer */}
                   <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openIndex === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
+                    openIndex === index ? 'max-h-96 opacity-100 pb-4 sm:pb-6' : 'max-h-0 opacity-0'
                   }`}>
-                    <p className="text-gray-600 leading-relaxed pr-8">
+                    <p className="text-gray-600 leading-relaxed pr-4 sm:pr-8 text-sm sm:text-base">
                       {item.answer}
                     </p>
                   </div>

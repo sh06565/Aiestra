@@ -1,111 +1,335 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Phone, Headphones, Calendar, Users, Globe, Shield } from 'lucide-react'
 import { useParams, Link } from 'react-router-dom'
-import { Solutions } from '../components'
+import { CalButton } from '../components/ui'
 
-const SolutionsPage = ({ onBookDemo }) => {
+const SolutionsOverview = () => {
+  const serviceSuites = [
+    {
+      id: 'customer-support',
+      title: 'Customer Support Voice Agents',
+      description: '24/7 intelligent customer support that handles inquiries, resolves issues, and provides instant assistance.',
+      icon: <Headphones className="w-8 h-8" />,
+      features: ['24/7 Availability', 'Issue Resolution', 'CRM Integration', 'Multi-language Support'],
+      industries: ['E-commerce', 'SaaS', 'Healthcare', 'Financial Services']
+    },
+    {
+      id: 'receptionist',
+      title: 'Receptionist Voice Agents',
+      description: 'Professional virtual receptionists that handle calls, route inquiries, and manage appointments.',
+      icon: <Phone className="w-8 h-8" />,
+      features: ['Call Routing', 'Appointment Scheduling', 'Visitor Information', 'Message Taking'],
+      industries: ['Medical Practices', 'Legal Firms', 'Real Estate', 'Professional Services']
+    },
+    {
+      id: 'sales-qualification',
+      title: 'Sales & Lead Qualification',
+      description: 'Intelligent lead qualification and sales support that identifies opportunities and nurtures prospects.',
+      icon: <Users className="w-8 h-8" />,
+      features: ['Lead Scoring', 'Prospect Gathering', 'Demo Scheduling', 'Pipeline Management'],
+      industries: ['B2B Software', 'Real Estate', 'Financial Services', 'Insurance']
+    },
+    {
+      id: 'appointment-booking',
+      title: 'Appointment Booking Agents',
+      description: 'Streamlined appointment scheduling that integrates with your calendar and reduces no-shows.',
+      icon: <Calendar className="w-8 h-8" />,
+      features: ['Calendar Integration', 'Automated Reminders', 'Rescheduling', 'Waitlist Management'],
+      industries: ['Healthcare', 'Beauty & Wellness', 'Professional Services', 'Education']
+    },
+    {
+      id: 'technical-support',
+      title: 'Technical Support Agents',
+      description: 'Expert technical support that troubleshoots issues and provides step-by-step guidance.',
+      icon: <Shield className="w-8 h-8" />,
+      features: ['Troubleshooting', 'Knowledge Base', 'Remote Diagnostics', 'Escalation'],
+      industries: ['Technology', 'Software', 'Electronics', 'Telecommunications']
+    },
+    {
+      id: 'multi-language',
+      title: 'Multi-language Support',
+      description: 'Break language barriers with voice agents that communicate fluently in multiple languages.',
+      icon: <Globe className="w-8 h-8" />,
+      features: ['50+ Languages', 'Cultural Context', 'Accent Recognition', 'Localized Support'],
+      industries: ['Global E-commerce', 'International Services', 'Travel & Hospitality', 'Education']
+    }
+  ]
+
+  return (
+    <main className="pt-20">
+      {/* Hero Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-6">
+                VOICE AGENT SERVICES
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+                AI Voice Agent Service Suites
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                Transform your business operations with intelligent voice agents designed for specific use cases. 
+                From customer support to appointment booking, we provide comprehensive AI voice solutions.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Suites Grid */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {serviceSuites.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mr-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-gray-600">
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Industries:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.industries.map((industry, idx) => (
+                        <span key={idx} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                          {industry}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <Link
+                    to={`/solutions/${service.id}`}
+                    className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-purple-900 py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+                Let's discuss how our voice agent services can solve your specific business challenges. 
+                Get a personalized consultation and see how we can help.
+              </p>
+              <CalButton
+                calLink="aiestra/30min"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-900 font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900"
+              >
+                <span className="mr-2">Book a Consultation</span>
+                <ArrowRight size={20} />
+              </CalButton>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+const SolutionsPage = () => {
   const { solutionId } = useParams()
 
   // If no solutionId, show the main solutions overview
   if (!solutionId) {
-    return <Solutions onBookDemo={onBookDemo} />
+    return <SolutionsOverview />
   }
 
   const solutions = {
-    'voice-agents': {
-      title: 'AI Voice Agents',
-      subtitle: 'VOICE AI',
-      description: 'Natural voice interactions that understand context and respond with human-like intelligence.',
-      longDescription: 'Transform customer interactions with AI voice agents that understand natural speech, maintain context across conversations, and provide intelligent responses in real-time.',
+    'customer-support': {
+      title: 'Customer Support Voice Agents',
+      subtitle: 'CUSTOMER SERVICE',
+      description: '24/7 intelligent customer support that handles inquiries, resolves issues, and provides instant assistance.',
+      longDescription: 'Transform your customer support with AI voice agents that provide instant, intelligent responses to customer inquiries. Handle common questions, troubleshoot issues, and escalate complex problems seamlessly.',
       features: [
-        'Natural speech recognition and synthesis',
-        'Context awareness across conversations',
-        'Multi-language support',
-        'Real-time processing and response',
-        'Emotion detection and response',
-        'Integration with existing systems'
+        '24/7 availability and instant response',
+        'Natural language understanding for complex queries',
+        'Integration with CRM and ticketing systems',
+        'Multi-language support for global customers',
+        'Escalation to human agents when needed',
+        'Real-time analytics and performance tracking'
       ],
+      industries: ['E-commerce', 'SaaS', 'Healthcare', 'Financial Services', 'Telecommunications'],
       demo: {
         type: 'voice',
-        title: 'Voice Agent Demo',
+        title: 'Customer Support Demo',
         messages: [
-          { type: 'user', text: 'Hello, I need help with my order' },
-          { type: 'agent', text: 'Hi! I can help you with your order. I can see you have an order #12345. What would you like to know?' },
-          { type: 'user', text: 'When will it be delivered?' },
-          { type: 'agent', text: 'Your order is scheduled for delivery tomorrow between 2-4 PM. Would you like me to send you a notification when it\'s out for delivery?' }
+          { type: 'user', text: 'Hi, I\'m having trouble with my recent order' },
+          { type: 'agent', text: 'Hello! I\'d be happy to help you with your order. I can see you have order #12345. What specific issue are you experiencing?' },
+          { type: 'user', text: 'It says delivered but I never received it' },
+          { type: 'agent', text: 'I understand your concern. Let me check the delivery details and initiate a trace. I\'ll also send you a replacement order right away. You should receive it within 2-3 business days.' }
         ]
       }
     },
-    'agentic-chatbots': {
-      title: 'Agentic AI Chatbots',
-      subtitle: 'AGENTIC AI',
-      description: 'Intelligent conversational agents that can understand, reason, and take actions autonomously.',
-      longDescription: 'Deploy intelligent conversational agents that can understand complex queries, reason through multi-step processes, and take autonomous actions to solve problems.',
+    'receptionist': {
+      title: 'Receptionist Voice Agents',
+      subtitle: 'RECEPTION SERVICES',
+      description: 'Professional virtual receptionists that handle calls, route inquiries, and manage appointments.',
+      longDescription: 'Replace or supplement your reception staff with intelligent voice agents that can handle incoming calls, route inquiries to the right departments, schedule appointments, and provide basic information about your business.',
       features: [
-        'Autonomous decision making',
-        'Multi-step reasoning capabilities',
-        'Context understanding and memory',
-        'Action execution and task completion',
-        'Learning from interactions',
-        'Integration with business systems'
+        'Professional call handling and routing',
+        'Appointment scheduling and calendar integration',
+        'Visitor information and directions',
+        'Call screening and message taking',
+        'Integration with business directories',
+        'Customizable greetings and responses'
       ],
+      industries: ['Medical Practices', 'Legal Firms', 'Real Estate', 'Professional Services', 'Dental Offices'],
       demo: {
-        type: 'agentic',
-        title: 'Agentic Chatbot Demo',
+        type: 'voice',
+        title: 'Receptionist Demo',
         messages: [
-          { type: 'user', text: 'I need to book a meeting room and order lunch for tomorrow' },
-          { type: 'agent', text: 'I\'ll help you with that. Let me check available meeting rooms and lunch options for tomorrow.' },
-          { type: 'user', text: 'Great, what\'s available?' },
-          { type: 'agent', text: 'I found Conference Room A available at 12 PM and can order sandwiches from the deli. I\'ve booked the room and placed the order. You\'ll receive confirmations shortly.' }
+          { type: 'user', text: 'Good morning, I\'d like to schedule an appointment' },
+          { type: 'agent', text: 'Good morning! I\'d be happy to help you schedule an appointment. I can see Dr. Smith has availability next Tuesday at 2 PM or Wednesday at 10 AM. Which works better for you?' },
+          { type: 'user', text: 'Tuesday at 2 PM sounds perfect' },
+          { type: 'agent', text: 'Excellent! I\'ve scheduled your appointment for Tuesday at 2 PM. You\'ll receive a confirmation email and text reminder. Is there anything else I can help you with?' }
         ]
       }
     },
-    'embedded-ai': {
-      title: 'Embedded AI Systems',
-      subtitle: 'EMBEDDED AI',
-      description: 'AI seamlessly integrated into your existing applications and workflows.',
-      longDescription: 'Integrate AI capabilities directly into your existing applications, workflows, and business processes for seamless automation and intelligent decision-making.',
+    'sales-qualification': {
+      title: 'Sales & Lead Qualification',
+      subtitle: 'SALES AUTOMATION',
+      description: 'Intelligent lead qualification and sales support that identifies opportunities and nurtures prospects.',
+      longDescription: 'Boost your sales team\'s efficiency with AI voice agents that qualify leads, gather prospect information, schedule demos, and nurture potential customers through the sales funnel.',
       features: [
-        'Seamless application integration',
-        'Workflow automation and optimization',
-        'Real-time data processing',
-        'Scalable architecture design',
-        'Custom model deployment',
-        'Performance monitoring and analytics'
+        'Automated lead qualification and scoring',
+        'Prospect information gathering',
+        'Demo scheduling and follow-up',
+        'Sales pipeline management',
+        'Integration with CRM systems',
+        'Performance analytics and reporting'
       ],
+      industries: ['B2B Software', 'Real Estate', 'Financial Services', 'Insurance', 'Consulting'],
       demo: {
-        type: 'embedded',
-        title: 'Embedded AI Demo',
+        type: 'voice',
+        title: 'Sales Qualification Demo',
         messages: [
-          { type: 'user', text: 'Can you analyze this customer data and suggest improvements?' },
-          { type: 'agent', text: 'I\'ve analyzed the customer data and identified several opportunities. The AI system has processed 10,000+ records and found patterns.' },
-          { type: 'user', text: 'What are the key insights?' },
-          { type: 'agent', text: 'Key insights: 1) 40% of customers prefer mobile interactions, 2) Peak usage is 2-4 PM, 3) Support tickets reduced by 60% with AI integration.' }
+          { type: 'user', text: 'I\'m interested in your software solution' },
+          { type: 'agent', text: 'Great! I\'d love to learn more about your needs. What size is your company and what challenges are you looking to solve?' },
+          { type: 'user', text: 'We\'re a 50-person company and need better customer management' },
+          { type: 'agent', text: 'Perfect! Our CRM solution is ideal for companies your size. I\'d like to schedule a personalized demo with our sales team. Are you available for a 30-minute call this week?' }
         ]
       }
     },
-    'agentic-automations': {
-      title: 'Agentic AI Automations',
-      subtitle: 'AUTOMATION AI',
-      description: 'Intelligent automation systems that can learn, adapt, and optimize processes autonomously.',
-      longDescription: 'Deploy intelligent automation systems that continuously learn from data, adapt to changing conditions, and optimize business processes for maximum efficiency.',
+    'appointment-booking': {
+      title: 'Appointment Booking Agents',
+      subtitle: 'SCHEDULING AUTOMATION',
+      description: 'Streamlined appointment scheduling that integrates with your calendar and reduces no-shows.',
+      longDescription: 'Simplify appointment booking with intelligent voice agents that check availability, schedule appointments, send reminders, and handle rescheduling requests automatically.',
       features: [
-        'Process optimization and learning',
-        'Adaptive workflow management',
-        'Performance monitoring and analytics',
-        'Predictive maintenance capabilities',
-        'Continuous improvement algorithms',
-        'Multi-system integration'
+        'Real-time calendar integration',
+        'Automated appointment reminders',
+        'Rescheduling and cancellation handling',
+        'Waitlist management',
+        'Multi-location support',
+        'Reduced no-shows with smart reminders'
       ],
+      industries: ['Healthcare', 'Beauty & Wellness', 'Professional Services', 'Education', 'Automotive'],
       demo: {
-        type: 'automation',
-        title: 'Automation Demo',
+        type: 'voice',
+        title: 'Appointment Booking Demo',
         messages: [
-          { type: 'user', text: 'How is the automation system performing this week?' },
-          { type: 'agent', text: 'The automation system has processed 15,000 tasks this week with 99.2% accuracy. I\'ve identified 3 optimization opportunities.' },
-          { type: 'user', text: 'What optimizations can we implement?' },
-          { type: 'agent', text: 'Recommended optimizations: 1) Reduce processing time by 25% with parallel workflows, 2) Implement predictive scheduling, 3) Add real-time monitoring alerts.' }
+          { type: 'user', text: 'I need to book a haircut for next week' },
+          { type: 'agent', text: 'I\'d be happy to help you book a haircut! I can see we have availability next Tuesday at 3 PM, Wednesday at 11 AM, or Friday at 2 PM. Which works best for you?' },
+          { type: 'user', text: 'Tuesday at 3 PM works great' },
+          { type: 'agent', text: 'Perfect! I\'ve booked your haircut for Tuesday at 3 PM with Sarah. You\'ll receive a confirmation text and email. We\'ll also send you a reminder 24 hours before your appointment.' }
+        ]
+      }
+    },
+    'technical-support': {
+      title: 'Technical Support Agents',
+      subtitle: 'TECHNICAL ASSISTANCE',
+      description: 'Expert technical support that troubleshoots issues and provides step-by-step guidance.',
+      longDescription: 'Provide instant technical support with AI voice agents that can troubleshoot common issues, guide users through solutions, and escalate complex technical problems to your support team.',
+      features: [
+        'Step-by-step troubleshooting guidance',
+        'Integration with knowledge bases',
+        'Remote diagnostic capabilities',
+        'Escalation to technical specialists',
+        'Multi-channel support (phone, chat, email)',
+        'Performance tracking and improvement'
+      ],
+      industries: ['Technology', 'Software', 'Electronics', 'Telecommunications', 'IoT Devices'],
+      demo: {
+        type: 'voice',
+        title: 'Technical Support Demo',
+        messages: [
+          { type: 'user', text: 'My internet keeps disconnecting' },
+          { type: 'agent', text: 'I can help you troubleshoot that. Let\'s start by checking your router. Can you tell me if the lights on your router are solid or blinking?' },
+          { type: 'user', text: 'They\'re blinking red' },
+          { type: 'agent', text: 'The blinking red lights indicate a connection issue. Let\'s try resetting your router. I\'ll guide you through the process step by step.' }
+        ]
+      }
+    },
+    'multi-language': {
+      title: 'Multi-language Support',
+      subtitle: 'GLOBAL SUPPORT',
+      description: 'Break language barriers with voice agents that communicate fluently in multiple languages.',
+      longDescription: 'Serve your global customer base with AI voice agents that can communicate fluently in multiple languages, understand cultural nuances, and provide localized support.',
+      features: [
+        'Support for 50+ languages',
+        'Cultural context understanding',
+        'Accent and dialect recognition',
+        'Localized responses and information',
+        'Seamless language switching',
+        'Regional compliance and regulations'
+      ],
+      industries: ['Global E-commerce', 'International Services', 'Travel & Hospitality', 'Education', 'Healthcare'],
+      demo: {
+        type: 'voice',
+        title: 'Multi-language Demo',
+        messages: [
+          { type: 'user', text: 'Hola, necesito ayuda con mi pedido' },
+          { type: 'agent', text: '¡Hola! Me complace ayudarte con tu pedido. Puedo ver que tienes el pedido #12345. ¿En qué puedo asistirte?' },
+          { type: 'user', text: '¿Cuándo llegará mi pedido?' },
+          { type: 'agent', text: 'Tu pedido está programado para llegar mañana entre las 2-4 PM. ¿Te gustaría que te envíe una notificación cuando esté en camino?' }
         ]
       }
     }
@@ -128,6 +352,7 @@ const SolutionsPage = ({ onBookDemo }) => {
       </main>
     )
   }
+
 
   return (
     <main className="pt-20">
@@ -186,26 +411,43 @@ const SolutionsPage = ({ onBookDemo }) => {
                     <ul className="space-y-3">
                       {solution.features.map((feature, index) => (
                         <li key={index} className="flex items-start text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-3 mt-2"></div>
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </motion.div>
 
-                  {/* CTA Button */}
+                  {/* Industries */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
+                    className="space-y-4"
                   >
-                    <button
-                      onClick={onBookDemo}
-                      className="inline-flex items-center px-8 py-4 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                    <h3 className="text-lg font-medium text-black">Industries We Serve</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {solution.industries.map((industry, index) => (
+                        <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">
+                          {industry}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* CTA Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                  >
+                    <CalButton
+                      calLink="aiestra/30min"
+                      className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                     >
-                      <span className="mr-2">Request a demo</span>
+                      <span className="mr-2">Book a Consultation</span>
                       <ArrowRight size={20} />
-                    </button>
+                    </CalButton>
                   </motion.div>
                 </div>
               </motion.div>

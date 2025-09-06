@@ -1,4 +1,5 @@
 import React from 'react';
+import { CalButton } from '../ui';
 
 const CallToAction = () => {
   return (
@@ -31,9 +32,12 @@ const CallToAction = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
                 
                 <div className="relative z-10">
-                  <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105">
-                    Request Demo
-                  </button>
+                  <CalButton 
+                    calLink="aiestra/30min"
+                    className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Book a Consultation
+                  </CalButton>
                 </div>
               </div>
             </div>
@@ -44,9 +48,12 @@ const CallToAction = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl scale-110 group-hover:scale-125 transition-all duration-300"></div>
                 
                 <div className="relative z-10">
-                  <button className="px-8 py-3 bg-white/20 text-white font-bold rounded-xl border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 transform hover:scale-105">
-                    Get Started
-                  </button>
+                  <CalButton 
+                    calLink="aiestra/30min"
+                    className="px-8 py-3 bg-white/20 text-white font-bold rounded-xl border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Book a Consultation
+                  </CalButton>
                 </div>
               </div>
             </div>
@@ -93,6 +100,7 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
+
     </section>
   );
 };
